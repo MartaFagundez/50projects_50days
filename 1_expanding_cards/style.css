@@ -58,9 +58,9 @@ body {
   transition: all 1s ease-in 0.4s;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
   .panel {
-    font-size: 3em;
+    font-size: 3.5em;
   }
 }
 
@@ -72,15 +72,14 @@ body {
   }
 
   .panel {
-    font-size: 4em;
     max-width: 100%;
     border-radius: 25px;
     margin: 5px;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 480px) {
   .panel {
-    font-size: 3.5em;
+    font-size: 3em;
   }
 }
