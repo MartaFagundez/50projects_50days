@@ -2,6 +2,8 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -12,5 +14,4 @@ body {
   justify-content: center;
   height: 100vh;
   overflow: hidden;
-  margin: 0;
 }

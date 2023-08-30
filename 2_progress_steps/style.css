@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+* {
+  --blue-dark: #001e31;
+  --blue-medium: #1f3644;
+  --teal-dark: #24a390;
+  --teal-medium: #08c6ab;
+  --teal-light: #5affe7;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--blue-dark);
+  color: var(--blue-medium);
+  font-family: "Muli", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+.imgContainer {
+  display: flex;
+  max-width: 225px;
+  margin: 4rem auto;
+}
+
+.imgContainer img.signature {
+  opacity: 0.125;
+  max-width: 100%;
+  transition: opacity 0.5s ease-in;
+}
+img.signature:hover {
+  opacity: 0.75;
+}
+
+.progressContainer {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 40px;
+  max-width: 100%;
+  width: 350px;
+}
+
+.progressContainer::before {
+  content: "";
+  background-color: var(--blue-medium);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.progress {
+  content: "";
+  background-color: var(--teal-medium);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: 0.5s ease;
+}
+
+.circle {
+  background-color: var(--blue-dark);
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--blue-medium);
+  transition: all 0.5s ease-in;
+}
+
+.circle:hover {
+  border-color: var(--teal-medium);
+  color: var(--teal-medium);
+}
+
+.circle.active {
+  border-color: var(--teal-medium);
+  color: var(--teal-medium);
+  position: relative;
+}
+
+.circle.active.glowing::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0 0 1px #50f2f5, 0 0 3px #50f2f5, 0 0 20px rgba(80, 242, 245, 0.7);
+}
+
+button {
+  background-color: var(--teal-dark);
+  color: var(--blue-dark);
+  font-weight: bold;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 30px;
+  margin: 5px;
+  font-size: 14px;
+  transition: all 0.3s ease-in, transform ease;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  background-color: var(--teal-medium);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background-color: var(--blue-medium);
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.circle.active.glowing::before {
+  animation-name: glow;
+  animation-duration: 1.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
