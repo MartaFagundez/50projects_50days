@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Katibeh&family=Open+Sans&display=swap");
+
+* {
+  --gold: #cfa984;
+  --black: #444444;
+  --sand-dark: #e3dacf;
+  --sand-light: #f9f5f0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  overflow-x: hidden;
+  background-color: var(--black);
+  color: var(--sand-light);
+}
+
+.wrapper {
+  width: 100vw;
+  max-height: 100vh;
+  overflow: scroll;
+}
+
+.container {
+  background-color: var(--sand-light);
+  color: var(--black);
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.container.showNav {
+  transform: rotate(-20deg);
+}
+
+.circleContainer {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.circle {
+  background-color: var(--gold);
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.6s linear;
+}
+
+.container.showNav .circle {
+  transform: rotate(-70deg);
+}
+
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  color: var(--sand-light);
+}
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.container.showNav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 30px;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  color: var(--sand-light);
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in, color 0.1s ease;
+  cursor: pointer;
+}
+
+nav ul li:hover {
+  color: var(--gold);
+}
+
+nav ul li i {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+nav ul li + li {
+  margin-left: 17.5px;
+  transform: translateX(-150%);
+}
+
+nav ul li + li + li {
+  margin-left: 35px;
+  transform: translateX(-200%);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.introContainer {
+  display: flex;
+  width: 100%;
+  background-color: var(--sand-dark);
+  align-items: center;
+  justify-content: center;
+}
+
+.intro {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1600px;
+  margin: 5vw auto;
+  padding: 5vw;
+}
+
+.textIntro {
+  display: flex;
+  flex: 6;
+  flex-shrink: 1.25;
+  flex-basis: 500px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3vw;
+}
+
+.textIntro h1 {
+  font-family: "Katibeh", cursive;
+  font-size: 85px;
+  line-height: 65px;
+}
+.textIntro h1 span {
+  font-family: "Dancing Script", cursive;
+  color: var(--gold);
+  font-size: 70px;
+  vertical-align: middle;
+  line-height: 45px;
+}
+
+.textIntro p {
+  font-size: 24px;
+  padding-top: 3em;
+}
+
+.imgIntroContainer {
+  display: flex;
+  flex: 5;
+  flex-shrink: 1;
+  flex-basis: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 15px;
+}
+
+.imgIntroContainer img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  max-width: 1500px;
+  margin: 1rem auto 5rem auto;
+  padding: 5vw 12.5vw;
+}
+
+.info h2 {
+  font-family: "Katibeh", cursive;
+  font-size: 50px;
+  margin: 1em auto;
+}
+
+.info p {
+  font-size: 18px;
+  margin: 1em 0;
+}
+
+@media (max-width: 1440px) {
+  .intro {
+    max-width: 1300px;
+  }
+
+  .textIntro h1 {
+    font-size: 80px;
+    line-height: 60px;
+  }
+  .textIntro h1 span {
+    font-size: 65px;
+    vertical-align: middle;
+    line-height: 40px;
+  }
+
+  .textIntro p {
+    font-size: 22px;
+    padding-top: 2.5em;
+  }
+}
+
+@media (max-width: 1280px) {
+  .intro {
+    max-width: 1200px;
+  }
+
+  .textIntro h1 {
+    font-size: 75px;
+    line-height: 55px;
+  }
+  .textIntro h1 span {
+    font-size: 60px;
+    vertical-align: middle;
+    line-height: 35px;
+  }
+
+  .textIntro p {
+    font-size: 20px;
+    padding-top: 2em;
+  }
+}
+
+@media (max-width: 999px) {
+  .intro {
+    max-width: 700px;
+  }
+
+  .imgIntroContainer {
+    max-width: 400px;
+  }
+
+  .textIntro h1 {
+    text-align: center;
+    margin: 0.25em auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro {
+    max-width: 500px;
+    margin: 10vw auto;
+  }
+
+  .textIntro p {
+    font-size: 18px;
+    padding-top: 1.5em;
+    text-align: center;
+  }
+
+  .imgIntroContainer {
+    max-width: 300px;
+  }
+
+  .info h2 {
+    font-size: 35px;
+    margin: 1.25em auto 0 auto;
+  }
+
+  .info p {
+    font-size: 18px;
+    padding-top: 1.5em;
+    text-align: center;
+  }
+}
+
+@media (max-width: 412px) {
+  .intro {
+    margin: 15vw auto;
+  }
+
+  .textIntro h1 {
+    font-size: 60px;
+    line-height: 40px;
+  }
+  .textIntro h1 span {
+    font-size: 45px;
+    vertical-align: middle;
+    line-height: 20px;
+  }
+
+  .textIntro p {
+    padding: 1.75em;
+  }
+
+  .imgIntroContainer {
+    max-width: 200px;
+  }
+
+  .info h2 {
+    font-size: 30px;
+    line-height: 25px;
+    text-align: center;
+  }
+
+  .info p {
+    padding: 1.5em;
+  }
+}
