@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&display=swap");
+
+:root {
+  --gold: #b99a6f;
+  --green: #698269;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Macondo Swash Caps", cursive;
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--green);
+  background-image: url("./img/seigaiha_green.png");
+  color: var(--gold);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.quote {
+  margin: 25vh auto 21vh auto;
+}
+
+.quote p {
+  text-align: center;
+  font-size: 50px;
+}
+
+.quote p span.upper {
+  text-transform: uppercase;
+  font-size: 75px;
+}
+
+.book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  transform: translateX(100vw) translateY(-5vh);
+  transition: transform 2s ease;
+}
+
+.book:nth-of-type(even) {
+  transform: translateX(-100vw) translateY(-5vh);
+}
+
+.book.show {
+  transform: translateX(0) translateY(0);
+}
+
+.book img {
+  max-width: 100%;
+}
+
+.logo {
+  max-width: 200px;
+  margin: 100px auto 50px auto;
+}
+
+.logo img {
+  max-width: 100%;
+}
+
+@media (max-width: 412px) {
+  .quote p {
+    font-size: 40px;
+  }
+
+  .quote p span.upper {
+    font-size: 60px;
+  }
+
+  .book {
+    transition: transform 1.5s ease;
+  }
+}
