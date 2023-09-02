@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Phudu:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Phudu", cursive;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.bg {
+  background: url("https://martafagundez.com/mini-projects/blurry-loading/img/bg.jpg")
+    no-repeat center center/cover;
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);
+  z-index: -2;
+  filter: blur(0px);
+}
+
+.loading-text {
+  font-size: 50px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.logoContainer {
+  max-width: 250px;
+  margin-top: 50px;
+}
+
+.logo {
+  width: 100%;
+  opacity: 0.9;
+}
+
+.reload {
+  position: absolute;
+  top: 95%;
+  left: calc(100% - 40px);
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.reload button {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-radius: 7.5px;
+  font-size: 20px;
+  font-family: "Phudu", cursive;
+  font-weight: 500;
+  letter-spacing: 10px;
+  color: white;
+  padding: 10px 120px 10px 30px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.reload button:hover {
+  transform: scale(1.05);
+}
