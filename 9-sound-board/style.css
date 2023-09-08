@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=Overlock:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --light-green: #cfdbc5;
+  --medium-green: #7ea183;
+  --dark-green: #4b605b;
+  --paper: #f4efef;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Overlock", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--paper);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("./imgs/hero_bg_bottom.png") no-repeat bottom 0 left 0;
+  background-size: contain;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero .imgContainer {
+  display: flex;
+  width: 100px;
+  margin-top: -5vw;
+}
+
+.hero .imgContainer img {
+  max-width: 100%;
+}
+
+.hero h1 {
+  font-family: "Macondo Swash Caps", cursive;
+  font-size: 100px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--dark-green);
+}
+
+.hero h1 span {
+  font-size: 70px;
+}
+
+.hero h1 span.higher {
+  vertical-align: text-top;
+}
+
+.contentContainer {
+  background-color: var(--medium-green);
+  display: flex;
+  width: 100vw;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 5vw 10vw;
+  margin-bottom: 8vw;
+}
+
+.content h2 {
+  font-family: "Macondo Swash Caps", cursive;
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+  padding: 1rem 3rem;
+  margin: 5rem auto 8rem auto;
+  color: var(--light-green);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 3rem;
+}
+
+.card .imgContainer {
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card .imgContainer img {
+  cursor: pointer;
+  width: 75%;
+  transition: all 0.3s ease;
+}
+
+.card .imgContainer img:hover {
+  transform: scale(1.05);
+}
+
+.card p {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  color: var(--light-green);
+  max-width: 120px;
+  margin-bottom: 1rem;
+}
+
+.footerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.footerContainer::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  background-image: url("./imgs/hero_bg_bottom.png");
+  background-repeat: no-repeat;
+  background-position: bottom 0 left 0;
+  background-size: contain;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.footer h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--dark-green);
+  margin-top: 7rem;
+}
+
+.footer p {
+  font-size: 18px;
+  color: var(--dark-green);
+  padding: 2.5rem;
+  margin-bottom: 4rem;
+  font-weight: bold;
+}
+
+.footer .logoContainer {
+  width: 250px;
+  margin-bottom: 2rem;
+}
+
+.footer .logoContainer .logo {
+  max-width: 100%;
+  transition: all 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.01);
+}
+
+@media (max-width: 420px) {
+  .hero h1 {
+    font-size: 65px;
+  }
+
+  .hero h1 span {
+    font-size: 35px;
+  }
+
+  .content h2 {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+  }
+
+  .hero {
+    background: url("./imgs/bg_small.png") no-repeat bottom 0 left 0;
+  }
+
+  .hero .imgContainer {
+    margin-top: -10vw;
+  }
+
+  .footerContainer::before {
+    background-image: url("./imgs/bg_small.png");
+    background-size: cover;
+  }
+}
