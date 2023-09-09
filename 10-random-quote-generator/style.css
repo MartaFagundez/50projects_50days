@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Manrope:wght@200;400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #698474;
+  padding: 2rem;
+  position: relative;
+}
+
+main {
+  max-width: 500px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main h1 {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: absolute;
+  top: 4em;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 3rem;
+}
+
+.quoteContainer {
+  position: relative;
+  margin-top: 4rem;
+}
+
+.quoteContainer::before {
+  content: "“";
+  position: absolute;
+  top: -9rem;
+  left: -3rem;
+  font-size: 20rem;
+  opacity: 0.25;
+}
+
+#quote {
+  font-size: 3rem;
+  line-height: 4.2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+}
+
+#author {
+  font-size: 1.5rem;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#btn {
+  font-size: 1.75rem;
+  color: white;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  border: 0;
+  opacity: 0.75;
+  margin-bottom: 3rem;
+}
+
+#btn:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+#btn:disabled,
+#btn:disabled:hover {
+  opacity: 0;
+}
+
+#btn:focus {
+  outline: 0;
+}
+
+#btn:active {
+  transform: scale(0.98);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+footer .content {
+  font-size: 14px;
+  margin: 2rem auto;
+}
+
+a,
+a:visited,
+a:active {
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 420px) {
+  main h1 {
+    top: 3rem;
+  }
+
+  .quoteContainer::before {
+    top: -9rem;
+    left: -1.5rem;
+  }
+
+  #quote {
+    font-size: 2rem;
+    line-height: 3.2rem;
+    margin-bottom: 2rem;
+  }
+
+  #author {
+    font-size: 1.25rem;
+  }
+}
