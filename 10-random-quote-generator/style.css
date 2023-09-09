@@ -18,6 +18,7 @@ body {
   background-color: #698474;
   padding: 2rem;
   position: relative;
+  transition: background-color 0.3s ease;
 }
 
 main {
@@ -42,12 +43,13 @@ main h1 {
   margin-bottom: 3rem;
 }
 
-.quoteContainer {
+#quoteContainer {
   position: relative;
   margin-top: 6rem;
+  transition: opacity 0.4s ease;
 }
 
-.quoteContainer::before {
+#quoteContainer::before {
   content: "“";
   position: absolute;
   top: -9rem;
@@ -121,7 +123,7 @@ a:active {
     top: 3rem;
   }
 
-  .quoteContainer::before {
+  #quoteContainer::before {
     top: -9rem;
     left: -1.5rem;
   }
