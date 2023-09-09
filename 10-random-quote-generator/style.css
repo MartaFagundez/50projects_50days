@@ -44,7 +44,7 @@ main h1 {
 
 .quoteContainer {
   position: relative;
-  margin-top: 4rem;
+  margin-top: 6rem;
 }
 
 .quoteContainer::before {
@@ -78,7 +78,7 @@ main h1 {
   transition: all 0.3s ease;
   border: 0;
   opacity: 0.75;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 #btn:hover {
