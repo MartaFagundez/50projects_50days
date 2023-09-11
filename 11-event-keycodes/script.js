@@ -14,7 +14,14 @@ if (navigator.userAgent.match(/Android/i)
 
 window.addEventListener('keydown', (event) => {
   insert.innerHTML = `
-    <div class="key">${event.key === ' ' ? 'Space' : event.key} <small>event.key</small></div>
-    <div class="key">${event.code} <small>event.code</small></div>
+    <div class="firstLine">
+      <div class="key">${event.key === ' ' ? 'Space' : event.key}<small>event.key</small></div>
+      <div class="key">${event.code}<small>event.code</small></div>
+    </div>
+    <div class="secondLine">
+      <div class="${event.shiftKey ? "otherKey active" : "otherKey"}">Shift</div>
+      <div class="${event.ctrlKey ? "otherKey active" : "otherKey"}">Ctrl</div>
+      <div class="${event.altKey ? "otherKey active" : "otherKey"}">Alt</div>
+    </div>
   `;
 })

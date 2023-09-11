@@ -53,6 +53,12 @@ h1 {
   filter: drop-shadow(-2px 5px 10px rgb(11, 2, 21));
 }
 
+.firstLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .key {
   border: 1px solid var(--light);
   background-color: var(--dark);
@@ -76,6 +82,31 @@ h1 {
   text-align: center;
   width: 100%;
   font-size: 14px;
+}
+
+.secondLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.otherKey {
+  border: 1px solid var(--light);
+  background-color: var(--dark);
+  border-radius: 5px;
+  box-shadow: 2px 2px 7px 0px rgba(11, 2, 21, 0.8);
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 14px 14px;
+  margin: 10px 7px;
+  min-width: 90px;
+  opacity: 0.2;
+}
+
+.otherKey.active {
+  opacity: 1;
 }
 
 footer p {
