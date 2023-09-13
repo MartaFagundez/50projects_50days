@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Calistoga&family=Mulish&display=swap");
+
+:root {
+  --mainColor: #284c70;
+  --accentColor: #c5555e;
+  --text: #222831;
+  --background: #e8e8e8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "Mulish", sans-serif;
+  position: relative;
+}
+
+.container {
+  width: 500px;
+  max-width: 500px;
+  margin: auto 0;
+}
+
+.container h1 {
+  color: var(--mainColor);
+  font-family: "Calistoga", cursive;
+  font-size: 65px;
+  font-weight: 400;
+  line-height: 63px;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.container h1 span {
+  color: var(--accentColor);
+}
+
+.container p {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.container textarea {
+  border: none;
+  display: block;
+  width: 100%;
+  height: 120px;
+  font-family: inherit;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.container textarea:focus {
+  outline: none;
+}
+
+#tags {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background-color: var(--mainColor);
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin: 0 5px 10px 0;
+  font-size: 14px;
+  display: flexbox;
+}
+
+.tag.highlight {
+  background-color: var(--accentColor);
+}
+
+footer {
+  display: flex;
+  justify-self: flex-end;
+  margin: auto 0 0 0;
+  font-size: 16px;
+  padding-top: 1rem;
+}
+
+footer p {
+  color: var(--mainColor);
+}
+
+a,
+a:visited,
+a:active {
+  color: var(--mainColor);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accentColor);
+}
+
+@media (max-width: 420px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .container h1 {
+    font-size: 50px;
+    line-height: 48px;
+    margin-top: 2rem;
+  }
+
+  .container p {
+    font-size: 18px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .container textarea {
+    height: 180px;
+  }
+}
