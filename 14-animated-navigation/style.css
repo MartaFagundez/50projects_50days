@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&display=swap");
+
+:root {
+  --accentColor: #5290f9;
+  --background: #3f3b6c;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background);
+  background: url("./img/bg_mesh.jpg") no-repeat center;
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 50vh;
+  margin: 1rem auto;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: white;
+  mix-blend-mode: overlay;
+  opacity: 0.8;
+  margin: 1rem auto;
+}
+
+nav {
+  background: rgba(15, 17, 49, 0.3);
+  box-shadow: 2px 2px 4px 1px rgba(15, 17, 49, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 5px;
+  border: 1px solid rgba(15, 17, 49, 0.125);
+  padding: 20px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.6s linear;
+  overflow-x: hidden;
+}
+
+nav.active {
+  width: 350px;
+  /* box-shadow: 2px 2px 4px 1px rgba(15, 17, 49, 0.5); */
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 0;
+  transition: width 0.6s linear;
+}
+
+nav.active ul {
+  width: 100%;
+}
+
+nav ul li {
+  transform: rotateY(0deg);
+  opacity: 0;
+  transition: transform 0.6s linear, opacity 0.6s linear;
+}
+
+nav.active ul li {
+  opacity: 1;
+  transform: rotateY(360deg);
+}
+
+nav ul a {
+  position: relative;
+  margin: 0 10px;
+}
+
+.icon {
+  background-color: transparent;
+  color: var(--accentColor);
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  height: 30px;
+  width: 30px;
+}
+
+.icon:focus {
+  outline: 0;
+}
+
+.icon .line {
+  background-color: var(--accentColor);
+  height: 2px;
+  width: 20px;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  transition: transform 0.6s linear;
+}
+
+.icon .line2 {
+  top: auto;
+  bottom: 10px;
+}
+
+nav.active .icon .line1 {
+  transform: rotate(-765deg) translateY(5.5px);
+}
+
+nav.active .icon .line2 {
+  transform: rotate(765deg) translateY(-5.5px);
+}
+
+footer {
+  display: flex;
+  justify-self: flex-end;
+  margin: auto 0 0 0;
+  font-size: 16px;
+  padding-top: 1rem;
+}
+
+footer p {
+  color: white;
+  font-weight: 300;
+  mix-blend-mode: overlay;
+}
+
+a,
+a:visited,
+a:active {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*Animación adicional de prueba*/
+/* @keyframes glow {
+  0% {
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(46, 206, 255, 0.2);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(46, 206, 255, 0.2);
+    box-shadow: 0px 0px 0px 0px rgba(46, 206, 255, 0.2);
+  }
+  25% {
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(46, 206, 255, 0.2);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(46, 206, 255, 0.2);
+    box-shadow: 0px 0px 0px 0px rgba(46, 206, 255, 0.2);
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 20px 2px rgba(46, 206, 255, 0.77);
+    -moz-box-shadow: 0px 0px 20px 2px rgba(46, 206, 255, 0.77);
+    box-shadow: 0px 0px 20px 2px rgba(46, 206, 255, 0.77);
+  }
+  75% {
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(46, 206, 255, 0.2);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(46, 206, 255, 0.2);
+    box-shadow: 0px 0px 0px 0px rgba(46, 206, 255, 0.2);
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(46, 206, 255, 0.2);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(46, 206, 255, 0.2);
+    box-shadow: 0px 0px 0px 0px rgba(46, 206, 255, 0.2);
+  }
+}
+nav:not(.active) {
+  animation-name: glow;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  animation-delay: 1s;
+} */
+
+@media (max-width: 420px) {
+  nav.active {
+    width: 320px;
+  }
+
+  nav ul a {
+    margin: 0 6px;
+  }
+}
