@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap");
+
+:root {
+  --background: #016a70;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto Mono", sans-serif;
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: var(--background);
+  background: url("./img/bg_leaf_b.jpg") no-repeat center;
+  background-size: cover;
+  color: white;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#title {
+  width: 100%;
+  text-align: center;
+  margin: 1.5rem auto 2rem auto;
+}
+
+#title h1 {
+  font-size: 36px;
+  font-weight: 300;
+  text-align: center;
+}
+
+#title p {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+#countersGroup {
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.counterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 280px;
+  height: 280px;
+  padding: 2rem;
+  margin: 1rem;
+  border: 1px solid rgba(8, 94, 94, 0.25);
+  border-radius: 15px;
+  background-color: rgba(8, 94, 94, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.counterContainer .counter {
+  font-size: 56px;
+  margin: 0.75rem auto 0 auto;
+}
+
+footer {
+  display: flex;
+  padding-top: 3rem;
+}
+
+footer p {
+  font-weight: 300;
+}
+
+a,
+a:visited,
+a:active {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 420px) {
+  #countersGroup {
+    flex-direction: column;
+  }
+
+  .counterContainer {
+    width: 260px;
+    height: 260px;
+    padding: 1.5rem;
+  }
+
+  .counterContainer .counter {
+    font-size: 50px;
+  }
+}
