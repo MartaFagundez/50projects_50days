@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
 
+/*  BASIC STYLES AND RESETS **************************/
 :root {
   --main-color: white;
   --accent-color: black;
@@ -21,6 +22,30 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
+/***************************************************/
+
+/*  FOOTER STYLES  *********************************/
+footer {
+  display: flex;
+  padding-top: 3rem;
+}
+
+footer p {
+  font-weight: 300;
+}
+
+footer a,
+footer a:visited,
+footer a:active {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/**************************************************/
