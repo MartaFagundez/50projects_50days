@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400&family=Satisfy&display=swap");
+
+/*  BASIC STYLES AND RESETS **************************/
+:root {
+  --main-color: white;
+  --accent-color: black;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(23, 10, 59);
+  position: relative;
+  color: white;
+}
+/***************************************************/
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+main h1 {
+  position: absolute;
+  top: 4rem;
+  text-align: center;
+  padding: 1rem 0;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 42px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background: #451e94;
+  background: linear-gradient(to left, #c33764 0%, #451e94 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+main h1 span {
+  font-family: "Satisfy", cursive;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 46px;
+  font-weight: 400;
+}
+
+main #btnsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3.5rem;
+}
+
+a.btn {
+  background: rgba(35, 12, 82, 0.7);
+  background: linear-gradient(
+    to left,
+    rgba(195, 55, 100, 0.7) 0%,
+    rgba(195, 55, 100, 0.3) 20%,
+    rgba(35, 12, 82, 0.5) 60%
+  );
+  color: white;
+  font-size: 16px;
+  font-family: inherit;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3px;
+  padding: 22px 36px;
+  border: none;
+  border-radius: 7px;
+  margin: 1rem auto;
+  box-shadow: 2px 2px 5px 0px rgba(10, 4, 26, 0.5);
+  transition: all 0.1s linear;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+a.btn:hover {
+  background: rgba(35, 12, 82, 0.8);
+  background: linear-gradient(
+    to left,
+    rgba(195, 55, 100, 0.75) 0%,
+    rgba(195, 55, 100, 0.35) 20%,
+    rgba(35, 12, 82, 0.7) 60%
+  );
+}
+
+a.btn:active {
+  transform: scale(0.99);
+}
+
+.btn span {
+  position: absolute;
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: scale 0.6s ease-out;
+  mix-blend-mode: overlay;
+}
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+/*  FOOTER STYLES  *********************************/
+footer {
+  display: flex;
+  padding-top: 1rem;
+  position: absolute;
+  bottom: 2rem;
+}
+
+footer p {
+  font-weight: 300;
+  font-size: 16px;
+  background: #451e94;
+  background: linear-gradient(to left, #c33764 0%, #451e94 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+footer a,
+footer a:visited,
+footer a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/**************************************************/
