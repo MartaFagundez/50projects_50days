@@ -1,15 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700&display=swap");
 
-/*  BASIC STYLES AND RESETS **************************/
+/*=============== VARIABLES CSS ===============*/
 :root {
-  --main-color: white;
-  --accent-color: black;
+  /*========== Colors ==========*/
+  --hue-color: 207;
+
+  --base-color: hsl(var(--hue-color), 44%, 49%);
+  --dark-color: hsl(var(--hue-color), 30%, 25%);
+  --accent-color: hsl(var(--hue-color), 100%, 49%);
+  --white-color: #f9f5f6;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Mulish", sans-serif;
+  --biggest-font-size: 2.5rem;
+  --small-font-size: 1rem;
+
+  /*========== Font weight ==========*/
+  --font-bold: 700;
+  --font-medium: 500;
+  --font-light: 300;
+
+  /*========== Margins ==========*/
+  --space-xsmall: 0.5rem;
+  --space-small: 1rem;
+  --space-medium: 1.5rem;
+  --space-large: 2rem;
+  --space-xlarge: 3rem;
+
+  /*========== z index ==========*/
+  --z-normal: 1;
+  --z-tooltip: 10;
 }
 
+/*=============== BASE ===============*/
 * {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 html {
@@ -17,35 +45,89 @@ html {
 }
 
 body {
-  font-family: "Mulish", sans-serif;
+  font-family: var(--body-font);
+  background: var(--base-color);
+  color: var(--text-color);
+  color: hsl(207, 44%, 49%);
+  width: 100vw;
+  min-height: 100vh;
+  padding: var(--space-large) var(--space-small);
+}
+
+a,
+a:visited,
+footer a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--accent-color);
+  mix-blend-mode: color-dodge;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 968px;
+  min-height: calc(100vh - (var(--space-large) * 2));
+  position: relative;
+}
+
+.flexColumnCenter {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  align-items: center;
+  width: 100%;
 }
-/***************************************************/
 
-/*  FOOTER STYLES  *********************************/
-footer {
+.flexRowCenter {
   display: flex;
-  padding-top: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/*=============== BASIC HEADER & FOOTER ===============*/
+header {
+  margin: var(--space-medium) auto;
+  position: absolute;
+  top: var(--space-medium);
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-light);
+  color: var(--white-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+footer {
+  padding-top: var(--space-large);
+  position: absolute;
+  bottom: var(--space-xsmall);
+  padding-top: 0;
 }
 
 footer p {
-  font-weight: 300;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-light);
+  color: var(--white-color);
 }
 
-footer a,
-footer a:visited,
-footer a:active {
-  color: white;
-  text-decoration: none;
-}
+/*=============== PROJECT RELATED ===============*/
 
-footer a:hover {
-  text-decoration: underline;
-}
+/*=============== MEDIA QUERIES ===============*/
+/* For large devices */
+@media screen and (min-width: 1281px) {
+  header {
+    top: var(--space-large);
+  }
 
-/**************************************************/
+  footer {
+    bottom: var(--space-medium);
+  }
+}
