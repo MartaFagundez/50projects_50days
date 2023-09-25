@@ -1,0 +1,175 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --hue-color: 190;
+
+  --base-color: hsl(var(--hue-color), 12%, 18%);
+  --dark-color: hsl(var(--hue-color), 10%, 8%);
+  --accent-color: hsl(var(--hue-color), 25%, 50%);
+  --white-color: #f9f5f6;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Mulish", sans-serif;
+  --biggest-font-size: 2.5rem;
+  --small-font-size: 1rem;
+
+  /*========== Font weight ==========*/
+  --font-bold: 700;
+  --font-medium: 500;
+  --font-light: 300;
+
+  /*========== Margins ==========*/
+  --space-xsmall: 0.5rem;
+  --space-small: 1rem;
+  --space-medium: 1.5rem;
+  --space-large: 2.5rem;
+  --space-xlarge: 3.5rem;
+
+  /*========== z index ==========*/
+  --z-normal: 1;
+  --z-tooltip: 10;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background: var(--base-color);
+  color: var(--text-color);
+  width: 100vw;
+  min-height: 100vh;
+  padding: var(--space-large) var(--space-small);
+}
+
+a,
+a:visited,
+footer a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 968px;
+  min-height: calc(100vh - (var(--space-large) * 2));
+  position: relative;
+}
+
+.flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/*=============== BASIC HEADER & FOOTER ===============*/
+header {
+  margin: var(--space-medium) auto;
+}
+
+header h1 {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-light);
+  color: var(--white-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+footer {
+  padding-top: var(--space-large);
+}
+
+footer p {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-light);
+  color: var(--white-color);
+}
+
+/*=============== BOXES ===============*/
+.boxes {
+  margin: var(--space-large) auto;
+  max-width: 700px;
+}
+
+.box {
+  width: 300px;
+  height: 200px;
+  border: 4px solid var(--dark-color);
+  margin: var(--space-xsmall);
+  background-color: var(--white-color);
+  overflow: hidden;
+}
+
+.fill {
+  background-image: url("https://source.unsplash.com/random/300x200/?nature");
+  width: 295px;
+  height: 195px;
+  cursor: grab;
+}
+
+.hold {
+  border: solid 5px #ccc;
+  opacity: 0.75;
+}
+
+.hovered {
+  background-color: var(--base-color);
+  border-color: var(--white-color);
+  border-style: dashed;
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For large devices */
+@media screen and (min-width: 968px) {
+  header {
+    position: absolute;
+    top: var(--space-medium);
+    margin: 0 auto;
+  }
+
+  footer {
+    position: absolute;
+    bottom: var(--space-small);
+    padding-top: 0;
+  }
+
+  .boxes.flexColumnCenter {
+    margin: var(--space-medium) auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1281px) {
+  header {
+    top: var(--space-large);
+  }
+
+  footer {
+    bottom: var(--space-medium);
+  }
+}
