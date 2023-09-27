@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Drawing App</title>
+  </head>
+  <body class="flexRowCenter">
+    <!-- Modal -->
+    <div id="modalContainer" class="out">
+      <div id="modalBackground">
+        <div id="modal">
+          <figure class="animation">
+            <img
+              src="./img/developer.gif"
+              alt="A developer sitting in an armchair programming on her laptop."
+            />
+          </figure>
+          <p>
+            Made with <i class="fa-solid fa-heart"></i> by
+            <a
+              href="https://www.linkedin.com/in/martafagundezrodriguez"
+              target="_blank"
+            >
+              Marta Fagúndez
+            </a>
+          </p>
+          <i class="fa-solid fa-xmark" id="closeBtn"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container -->
+    <div class="container flexRowStart">
+      <main class="flexRowCenter">
+        <div id="openBtn">
+          <i class="fa-solid fa-circle-info"></i>
+        </div>
+        <canvas id="canvas"></canvas>
+
+        <div class="toolbox flexRowCenter">
+          <div class="selectors flexRowCenter">
+            <div class="selector">
+              <label for="penSize">Pen size</label>
+              <input
+                type="range"
+                id="penSize"
+                name="penSize"
+                min="5"
+                max="50"
+                step="5"
+              />
+            </div>
+
+            <div class="selector">
+              <label for="penColor">Pen Color</label>
+              <div>
+                <input type="color" id="penColor" name="penColor" />
+              </div>
+            </div>
+
+            <div class="selector">
+              <label for="bgColor">Background</label>
+              <div>
+                <input type="color" id="bgColor" name="bgColor" />
+              </div>
+            </div>
+          </div>
+
+          <div class="buttons flexRowCenter">
+            <button id="clearBtn">Clear</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

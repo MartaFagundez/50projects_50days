@@ -1,0 +1,347 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --medium-gray: #2f333d;
+  --dark-gray: #282c34;
+  --light-gray: #72767f;
+  --white-color: #dbdfe6;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Mulish", sans-serif;
+  --biggest-font-size: 22px;
+  --small-font-size: 14px;
+
+  /*========== Font weight ==========*/
+  --font-bold: 700;
+  --font-medium: 500;
+  --font-light: 300;
+
+  /*========== Margins ==========*/
+  --space-xsmall: 0.5rem;
+  --space-small: 1rem;
+  --space-medium: 1.5rem;
+  --space-large: 2rem;
+  --space-xlarge: 3rem;
+
+  /*========== z index ==========*/
+  --z-normal: 1;
+  --z-tooltip: 10;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  background: var(--medium-gray);
+  color: var(--white-color);
+  width: 100vw;
+  min-height: 100vh;
+  padding: var(--space-small);
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: slateblue;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  width: 100%;
+  height: calc(100vh - (var(--space-small) * 2));
+  position: relative;
+}
+
+.flexColumnBetween {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowCenter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowStart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/*=================== MODAL ===================*/
+#modalContainer {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: var(--z-tooltip);
+  transform: scale(0);
+}
+
+#modalContainer #modalBackground {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 2.5rem;
+  background: rgba(47, 51, 61, 0.8);
+}
+
+#modalContainer #modalBackground #modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  padding: 3rem 2rem;
+  border-radius: 5px;
+  text-align: center;
+  background-color: white;
+  position: relative;
+}
+
+#modal figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  overflow: hidden;
+  margin-bottom: var(--space-small);
+}
+
+#modal figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+#modal p {
+  font-size: var(--small-font-size);
+  color: var(--light-gray);
+  margin-top: var(--space-small);
+}
+
+#modal #closeBtn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  transition: all 0.2s linear;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  border-radius: 50%;
+  color: var(--medium-gray);
+}
+#modal #closeBtn:hover {
+  color: var(--white-color);
+  background-color: var(--medium-gray);
+}
+#modal #closeBtn:active {
+  transform: scale(0.9);
+}
+
+#modalContainer.expanding {
+  transform: scaleY(0.01) scaleX(0);
+  animation: expandIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+#modalContainer.expanding #modalBackground #modal {
+  transform: scale(0);
+  animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+#modalContainer.expanding.out {
+  transform: scale(1);
+  animation: expandOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+#modalContainer.expanding.out #modalBackground #modal {
+  transform: scale(1);
+  animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes expandIn {
+  0% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+@keyframes expandOut {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+#openBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--medium-gray);
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+#openBtn i {
+  font-size: 1.5rem;
+}
+
+/*=============== PROJECT RELATED ===============*/
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 77%;
+  background-color: #f8f8f8;
+}
+
+.toolbox {
+  padding: var(--space-xsmall) 0;
+}
+
+.selectors {
+  width: 100%;
+}
+
+.selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: var(--space-small);
+  position: relative;
+}
+
+.selector label {
+  margin-right: var(--space-xsmall);
+}
+
+.selector div {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.selector input[type="color"] {
+  width: 200%;
+  height: 200%;
+  transform: translate(-25%, -25%);
+}
+
+.buttons {
+  margin: var(--space-small) auto;
+  width: 100%;
+}
+
+.buttons button {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: inherit;
+  color: var(--dark-gray);
+  background-color: var(--white-color);
+  border: none;
+  border-radius: 5px;
+  padding: var(--space-xsmall) var(--space-large);
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For large devices */
+@media screen and (min-width: 810px) {
+  canvas {
+    height: 87%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  a,
+  a:visited,
+  a:active {
+    text-decoration: none;
+    color: inherit;
+  }
+  a:hover {
+    color: steelblue;
+  }
+
+  .toolbox.flexRowCenter {
+    justify-content: space-between;
+    max-width: 1000px;
+    border-radius: 25px;
+    padding: 0 var(--space-small);
+    margin: var(--space-xsmall);
+  }
+
+  .selectors {
+    width: auto;
+    margin-right: auto;
+  }
+
+  .buttons {
+    width: auto;
+    margin-left: auto;
+    margin-right: var(--space-xsmall);
+  }
+
+  .buttons button {
+    letter-spacing: 1px;
+    padding: var(--space-xsmall) var(--space-medium);
+  }
+}
