@@ -105,11 +105,14 @@ a:hover {
 
 /*=============== BASIC HEADER & FOOTER ===============*/
 header {
+  width: 100%;
+  max-width: 250px;
   margin: var(--space-medium) auto;
   margin-bottom: auto;
 }
 
 header h1 {
+  width: 100%;
   font-size: var(--biggest-font-size);
   font-weight: var(--font-light);
   text-align: center;
@@ -123,10 +126,14 @@ main {
 }
 
 footer {
+  width: 100%;
+  max-width: 230px;
+  text-align: center;
   margin-top: auto;
 }
 
 footer p {
+  width: 100%;
   font-size: var(--small-font-size);
   font-weight: var(--font-light);
 }
@@ -204,10 +211,29 @@ img {
   animation: bgPos 1s linear infinite;
 }
 
+.animated-bg-darker {
+  background-image: linear-gradient(
+    to right,
+    hsl(var(--hue), 12%, 87%) 0%,
+    hsl(var(--hue), 12%, 84%) 10%,
+    hsl(var(--hue), 12%, 87%) 20%,
+    hsl(var(--hue), 12%, 87%) 100%
+  );
+  background-size: 200% 100%;
+  animation: bgPos 1s linear infinite;
+}
+
 .animated-bg-text {
   border-radius: 50px;
   display: inline-block;
   height: 10px;
+  width: 100%;
+}
+
+.animated-bg-title {
+  border-radius: 50px;
+  display: inline-block;
+  height: 30px;
   width: 100%;
 }
 
@@ -219,9 +245,4 @@ img {
   100% {
     background-position: -150% 0;
   }
-}
-
-/*=============== MEDIA QUERIES ===============*/
-/* For large devices */
-@media screen and (min-width: 1281px) {
 }
