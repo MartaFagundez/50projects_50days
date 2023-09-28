@@ -1,0 +1,227 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --hue: 220;
+
+  --light-gray: hsl(var(--hue), 10%, 94%);
+  --medium-gray: hsl(var(--hue), 3%, 67%);
+  --gray: hsl(var(--hue), 3%, 47%);
+  --black: hsl(var(--hue), 13%, 18%);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Roboto", sans-serif;
+  --biggest-font-size: 2rem;
+  --small-font-size: 14px;
+
+  /*========== Font weight ==========*/
+  --font-bold: 700;
+  --font-medium: 500;
+  --font-light: 300;
+
+  /*========== Margins ==========*/
+  --space-xsmall: 0.5rem;
+  --space-small: 1rem;
+  --space-medium: 1.5rem;
+  --space-large: 2rem;
+  --space-xlarge: 3rem;
+
+  /*========== z index ==========*/
+  --z-normal: 1;
+  --z-tooltip: 10;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background: var(--light-gray);
+  color: var(--black);
+  width: 100vw;
+}
+
+a,
+a:visited,
+footer a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--accent-color);
+  mix-blend-mode: color-dodge;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  width: 100%;
+  max-width: 968px;
+  min-height: 100vh;
+  padding: var(--space-large) var(--space-small);
+}
+
+.flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexColumnBetween {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowCenter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowStart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/*=============== BASIC HEADER & FOOTER ===============*/
+header {
+  margin: var(--space-medium) auto;
+  margin-bottom: auto;
+}
+
+header h1 {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-light);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+main {
+  width: 100%;
+  margin: auto 0;
+}
+
+footer {
+  margin-top: auto;
+}
+
+footer p {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-light);
+}
+
+img {
+  max-width: 100%;
+}
+
+/*=============== CARD ===============*/
+.card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+}
+
+.card-header {
+  height: 200px;
+}
+
+.card-header img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.card-content {
+  background-color: white;
+  padding: var(--space-large);
+}
+
+.card-title {
+  height: 20px;
+}
+
+.card-excerpt {
+  color: var(--medium-gray);
+  margin: 10px 0 20px;
+}
+
+.author {
+  display: flex;
+}
+
+.profile-img {
+  border-radius: 50%;
+  overflow: hidden;
+  height: 40px;
+  width: 40px;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 10px;
+  width: 100px;
+}
+
+.author-info small {
+  color: var(--gray);
+  margin-top: 5px;
+}
+
+.animated-bg {
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 10%,
+    #f6f7f8 20%,
+    #f6f7f8 100%
+  );
+  background-size: 200% 100%;
+  animation: bgPos 1s linear infinite;
+}
+
+.animated-bg-text {
+  border-radius: 50px;
+  display: inline-block;
+  height: 10px;
+  width: 100%;
+}
+
+@keyframes bgPos {
+  0% {
+    background-position: 50% 0;
+  }
+
+  100% {
+    background-position: -150% 0;
+  }
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For large devices */
+@media screen and (min-width: 1281px) {
+}
