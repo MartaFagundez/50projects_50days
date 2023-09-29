@@ -13,8 +13,8 @@
 
   /*========== Font and typography ==========*/
   --body-font: "Mulish", sans-serif;
-  --biggest-font-size: 2.5rem;
-  --small-font-size: 1rem;
+  --biggest-font-size: 2rem;
+  --small-font-size: 14px;
 
   /*========== Font weight ==========*/
   --font-bold: 700;
@@ -47,8 +47,7 @@ html {
 body {
   font-family: var(--body-font);
   background: var(--base-color);
-  color: var(--text-color);
-  color: hsl(207, 44%, 49%);
+  color: var(--white-color);
   width: 100vw;
   min-height: 100vh;
   padding: var(--space-large) var(--space-small);
@@ -56,27 +55,32 @@ body {
 
 a,
 a:visited,
-footer a:active {
+a:active {
   text-decoration: none;
   color: inherit;
 }
 
 a:hover {
   color: var(--accent-color);
-  mix-blend-mode: color-dodge;
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 968px;
-  min-height: calc(100vh - (var(--space-large) * 2));
-  position: relative;
 }
 
 .flexColumnCenter {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexColumnBetween {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
@@ -89,33 +93,34 @@ a:hover {
   width: 100%;
 }
 
+.flexRowStart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
 /*=============== BASIC HEADER & FOOTER ===============*/
 header {
-  margin: var(--space-medium) auto;
-  position: absolute;
-  top: var(--space-medium);
-  margin: 0 auto;
+  margin-bottom: var(--space-large);
 }
 
 header h1 {
   font-size: var(--biggest-font-size);
   font-weight: var(--font-light);
-  color: var(--white-color);
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 footer {
-  padding-top: var(--space-large);
-  position: absolute;
-  bottom: var(--space-xsmall);
-  padding-top: 0;
+  margin-top: var(--space-large);
 }
 
 footer p {
   font-size: var(--small-font-size);
   font-weight: var(--font-light);
-  color: var(--white-color);
 }
 
 /*=============== PROJECT RELATED ===============*/
@@ -123,11 +128,4 @@ footer p {
 /*=============== MEDIA QUERIES ===============*/
 /* For large devices */
 @media screen and (min-width: 1281px) {
-  header {
-    top: var(--space-large);
-  }
-
-  footer {
-    bottom: var(--space-medium);
-  }
 }
