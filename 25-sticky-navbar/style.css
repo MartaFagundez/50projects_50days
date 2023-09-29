@@ -1,22 +1,23 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Raleway:wght@300;400;700&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
   /*========== Colors ==========*/
-  --hue-color: 207;
-
-  --base-color: hsl(var(--hue-color), 44%, 49%);
-  --dark-color: hsl(var(--hue-color), 30%, 25%);
-  --accent-color: hsl(var(--hue-color), 100%, 49%);
-  --white-color: #f9f5f6;
+  --white-color: hsl(50, 21%, 95%);
+  --black-color: #222;
+  --light-gray: hsl(30, 4%, 90%);
 
   /*========== Font and typography ==========*/
-  --body-font: "Mulish", sans-serif;
-  --biggest-font-size: 2rem;
+  --body-font: "Raleway", sans-serif;
+  --big-headers-font: "Playfair Display", serif;
+  --biggest-font-size: 3.5rem;
+  --big-font-size: 2.5rem;
+  --medium-font-size: 1.75rem;
   --small-font-size: 14px;
 
   /*========== Font weight ==========*/
+  --font-black: 900;
   --font-bold: 700;
   --font-medium: 500;
   --font-light: 300;
@@ -25,8 +26,8 @@
   --space-xsmall: 0.5rem;
   --space-small: 1rem;
   --space-medium: 1.5rem;
-  --space-large: 2rem;
-  --space-xlarge: 3rem;
+  --space-large: 2.5rem;
+  --space-xlarge: 5rem;
 
   /*========== z index ==========*/
   --z-normal: 1;
@@ -46,11 +47,10 @@ html {
 
 body {
   font-family: var(--body-font);
-  background: var(--base-color);
-  color: var(--white-color);
+  background: var(--white-color);
+  color: var(--black-color);
   width: 100vw;
   min-height: 100vh;
-  padding: var(--space-large) var(--space-small);
 }
 
 a,
@@ -58,15 +58,21 @@ a:visited,
 a:active {
   text-decoration: none;
   color: inherit;
+  font-family: inherit;
 }
 
 a:hover {
-  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+img {
+  width: 100%;
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 968px;
+  padding: 0 var(--space-medium);
 }
 
 .flexColumnCenter {
@@ -101,31 +107,199 @@ a:hover {
   width: 100%;
 }
 
-/*=============== BASIC HEADER & FOOTER ===============*/
-header {
-  margin-bottom: var(--space-large);
+.flexRowBetween {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-header h1 {
-  font-size: var(--biggest-font-size);
-  font-weight: var(--font-light);
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+/*=============== FOOTER ===============*/
 
 footer {
-  margin-top: var(--space-large);
+  padding: var(--space-large) 0;
+  background-color: var(--black-color);
 }
 
 footer p {
   font-size: var(--small-font-size);
-  font-weight: var(--font-light);
+  color: var(--white-color);
 }
 
-/*=============== PROJECT RELATED ===============*/
+/*================== HERO ==================*/
+.hero {
+  width: 100vw;
+  height: 120vh;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin-top: var(--space-small);
+  margin-bottom: var(--space-xlarge);
+}
+
+.hero video {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+}
+
+.hero::before {
+  content: "";
+  background-color: rgba(5, 1, 5, 0.4);
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.heroContent {
+  position: relative;
+}
+
+.heroContent h1 {
+  font-family: var(--big-headers-font);
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-black);
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  color: white;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+  margin-top: -20vh;
+  margin-bottom: var(--space-medium);
+}
+
+.heroContent button {
+  padding: var(--space-small) var(--space-large);
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/*================== FEATURED ==================*/
+.featured {
+  margin: var(--space-xlarge) auto;
+  padding: 0 var(--space-medium);
+}
+
+.featured h2,
+.lorem h2 {
+  font-family: var(--big-headers-font);
+  text-align: center;
+  font-size: var(--big-font-size);
+  color: inherit;
+  font-weight: 400;
+  text-transform: capitalize;
+  padding: var(--space-large) 0 var(--space-small);
+}
+
+.featuredItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.featuredItems .item {
+  width: 100%;
+  max-width: 500px;
+  margin: var(--space-large) auto;
+}
+
+.item p {
+  font-size: var(--medium-font-size);
+  text-align: center;
+  text-transform: uppercase;
+  padding: var(--space-xsmall) 0;
+  cursor: pointer;
+}
+
+/*================== LOREM ==================*/
+.lorem {
+  height: 100vh;
+  background-color: var(--light-gray);
+}
+
+.lorem h2 {
+  margin-bottom: var(--space-medium);
+}
+
+.lorem p {
+  text-align: center;
+  max-width: 700px;
+  font-size: 1.25rem;
+  font-weight: var(--font-light);
+  margin: var(--space-small) auto;
+  padding: 0 var(--space-small);
+}
+
+/*=============== STICKY NAVBAR ===============*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  padding: var(--space-medium) 0;
+  z-index: var(--z-tooltip);
+  /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05); */
+  transition: all 0.3s linear;
+}
+
+header.active {
+  padding: 0.75rem 0;
+}
+
+header.hidden {
+  transform: translateY(-100%);
+}
+
+header .navbar .logo {
+  font-size: 1.55rem;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+header .navbar i {
+  font-size: 1.55rem;
+  margin: auto var(--space-xsmall);
+  cursor: pointer;
+}
 
 /*=============== MEDIA QUERIES ===============*/
 /* For large devices */
-@media screen and (min-width: 1281px) {
+@media screen and (min-width: 1280px) {
+  .featured {
+    padding: 0 var(--space-large);
+  }
+
+  .featured h2,
+  .lorem h2 {
+    font-size: var(--biggest-font-size);
+  }
+
+  .featuredItems {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .featuredItems .item {
+    margin: var(--space-large) var(--space-small);
+  }
 }

@@ -5,26 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.36.0/tabler-icons.min.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>My Project</title>
+    <title>Sticky Navbar</title>
   </head>
   <body class="flexColumnBetween">
-    <header>
-      <div class="container flexRowCenter">
-        <h1>Project Title</h1>
+    <header class="flexRowCenter">
+      <div class="navbar container flexRowBetween">
+        <div class="section left">
+          <i class="ti ti-menu-2"></i>
+          <i class="ti ti-map-pin"></i>
+        </div>
+        <div class="section center">
+          <p class="logo">Louvana</p>
+        </div>
+        <div class="section right">
+          <i class="ti ti-user-square-rounded"></i>
+          <i class="ti ti-shopping-cart"></i>
+        </div>
       </div>
     </header>
 
     <main>
-      <div class="container flexColumnCenter"></div>
+      <!-- HERO -->
+      <div class="hero flexRowCenter">
+        <!-- Video background -->
+        <video
+          playsinline
+          autoplay
+          muted
+          loop
+          poster="./img/interior_design.jpg"
+        >
+          <source src="./video/furnitures_video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- Text over video background -->
+        <div class="heroContent container">
+          <h1>Timeless design <br />for modern living</h1>
+          <button>See new collection</button>
+        </div>
+      </div>
+
+      <!-- FEATURED -->
+      <div class="featured flexColumnCenter">
+        <h2>Well made is always worth it</h2>
+        <div class="featuredItems">
+          <div class="item flexColumnCenter">
+            <figure class="flexRowCenter">
+              <img
+                src="./img/velvet-armchair.jpg"
+                alt="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+              />
+            </figure>
+            <p>Amet Nize</p>
+          </div>
+
+          <div class="item flexColumnCenter">
+            <figure class="flexRowCenter">
+              <img
+                src="./img/mediterranean-interior-design.jpg"
+                alt="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+              />
+            </figure>
+            <p>Sunt tempore</p>
+          </div>
+
+          <div class="item flexColumnCenter">
+            <figure class="flexRowCenter">
+              <img
+                src="./img/living-room-arrangement.jpg"
+                alt="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+              />
+            </figure>
+            <p>Veniam eveniet</p>
+          </div>
+
+          <div class="item flexColumnCenter">
+            <figure class="flexRowCenter">
+              <img
+                src="./img/modern-wooden-table-chair.jpg"
+                alt="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+              />
+            </figure>
+            <p>Magnam sunt</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOREM -->
+      <div class="lorem flexRowCenter">
+        <div class="container flexColumnCenter">
+          <h2>Possimus praesentium</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+            suscipit nihil eaque dolore nam, placeat, alias, perferendis maxime
+            vitae quo cumque nisi.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+            numquam optio voluptatum ipsa? Sed impedit hic voluptatum nostrum
+            quis accusantium!
+          </p>
+          <p>Adipisicing elit. Dolore, nam.</p>
+        </div>
+      </div>
     </main>
 
-    <footer>
+    <footer class="flexRowCenter">
       <div class="container flexRowCenter">
         <p>
-          Made with <i class="fa-solid fa-heart"></i> by
+          Made with <i class="ti ti-heart-filled"></i> by
           <a
             href="https://www.linkedin.com/in/martafagundezrodriguez"
             target="_blank"
