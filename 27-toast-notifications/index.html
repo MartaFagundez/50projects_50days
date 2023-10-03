@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Toast Notifications</title>
+  </head>
+  <body class="flexColumnStart">
+    <header>
+      <div class="container flexColumnCenter">
+        <figure class="imgContainer">
+          <img src="./img/toast_cat.png" alt="" />
+        </figure>
+        <h1>Toast Notifications</h1>
+      </div>
+    </header>
+
+    <main>
+      <!-- Buttons Container -->
+      <div class="flexColumnCenter">
+        <button class="btn" id="btnNormal">Make me a toast</button>
+        <button class="btn" id="btnSuccess">Make me a success toast</button>
+        <button class="btn" id="btnError">Make me a error toast</button>
+      </div>
+
+      <div id="toastsContainer"></div>
+    </main>
+
+    <footer>
+      <div class="container flexRowCenter">
+        <p>
+          Made with <i class="fa-solid fa-heart"></i> by
+          <a
+            href="https://www.linkedin.com/in/martafagundezrodriguez"
+            target="_blank"
+          >
+            Marta Fagúndez
+          </a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+  </body>
+</html>

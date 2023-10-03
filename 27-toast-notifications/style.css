@@ -1,0 +1,206 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --yellow: #ffec5e;
+  --dark-blue: #003153;
+  --black-color: #040403;
+  --white-color: #f9f5f6;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Barlow Condensed", sans-serif;
+  --biggest-font-size: 2rem;
+  --small-font-size: 14px;
+
+  /*========== Font weight ==========*/
+  --font-bold: 600;
+
+  /*========== Margins ==========*/
+  --space-xsmall: 0.5rem;
+  --space-small: 1rem;
+  --space-medium: 1.5rem;
+  --space-large: 2rem;
+  --space-xlarge: 3rem;
+
+  /*========== z index ==========*/
+  --z-normal: 1;
+  --z-tooltip: 10;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--yellow);
+  color: var(--dark-blue);
+  width: 100vw;
+  min-height: 100vh;
+  padding: var(--space-large) var(--space-small) var(--space-small)
+    var(--space-small);
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 968px;
+}
+
+.flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexColumnBetween {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.flexColumnStart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowCenter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowStart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+/*=============== BASIC STYLES ===============*/
+header {
+  margin: 7vh auto 4vh;
+}
+
+header h1 {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-light);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-top: var(--space-xsmall);
+}
+
+header .imgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 125px;
+}
+
+header .imgContainer img {
+  width: 100%;
+}
+
+footer {
+  justify-self: flex-end;
+  margin-top: auto;
+}
+
+footer p {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-light);
+}
+
+.btn {
+  background-color: var(--dark-blue);
+  border: none;
+  border-radius: 5px;
+  color: var(--yellow);
+  padding: var(--space-small) var(--space-xsmall);
+  width: 200px;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: var(--space-xsmall);
+  transition: transform 0.2s linear;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/*=============== TOASTS ===============*/
+#toastsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: fixed;
+  right: var(--space-small);
+  bottom: var(--space-xlarge);
+  z-index: var(--z-tooltip);
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white-color);
+  padding: var(--space-xsmall) var(--space-small);
+  margin-bottom: var(--space-xsmall);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  animation: appear ease-in 0.6s, appear ease-out 0.6s 3.5s reverse;
+}
+
+.toast .icon {
+  margin-right: var(--space-xsmall);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For large devices */
+@media screen and (min-width: 1280px) {
+  header {
+    margin: 10vh auto 4vh;
+  }
+}
