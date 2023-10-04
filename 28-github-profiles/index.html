@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Github Profiles</title>
+  </head>
+  <body class="flexColumnStart">
+    <!-- HEADER -->
+    <header>
+      <div class="container flexColumnCenter">
+        <!-- Logo player -->
+        <div class="logo">
+          <dotlottie-player
+            id="player"
+            src="https://lottie.host/632704a2-21de-4703-90c3-ef4fd711d1cf/CHIJvI07Ou.json"
+            background="transparent"
+            speed="1"
+            style="width: 75px; height: 75px"
+            direction="1"
+            mode="normal"
+            autoplay
+            loop
+          ></dotlottie-player>
+        </div>
+
+        <h1>Github Profiles</h1>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="flexColumnCenter">
+      <!-- Form -->
+      <form id="form" class="flexRowCenter">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Search a Github User"
+        />
+      </form>
+    </main>
+
+    <footer>
+      <div class="container flexRowCenter">
+        <p>
+          Made with <i class="fa-solid fa-heart"></i> by
+          <a
+            href="https://www.linkedin.com/in/martafagundezrodriguez"
+            target="_blank"
+          >
+            Marta Fagúndez
+          </a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <!-- ------- -->
+    <!-- Lottie player -->
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+    <!-- Axios -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"
+      integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Custom -->
+    <script src="script.js"></script>
+  </body>
+</html>

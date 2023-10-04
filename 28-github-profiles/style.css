@@ -1,0 +1,313 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --dark-color: hsl(240, 13%, 15%);
+  --accent-color: hsl(196, 100%, 33%);
+  --white-color: hsl(210, 32%, 85%);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Inconsolata", monospace;
+  --biggest-font-size: 2rem;
+  --small-font-size: 16px;
+
+  /*========== Font weight ==========*/
+  --font-bold: 700;
+  --font-medium: 500;
+  --font-light: 300;
+
+  /*========== Margins ==========*/
+  --space-xsmall: 0.5rem;
+  --space-small: 1rem;
+  --space-medium: 1.5rem;
+  --space-large: 2rem;
+  --space-xlarge: 3rem;
+
+  /*========== z index ==========*/
+  --z-normal: 1;
+  --z-tooltip: 10;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background: var(--dark-color);
+  color: var(--white-color);
+  width: 100vw;
+  min-height: 100vh;
+  padding: var(--space-medium) var(--space-small);
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  width: 100%;
+  max-width: 968px;
+}
+
+.flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexColumnBetween {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.flexColumnStart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowCenter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowStart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+/*=============== BASIC HEADER & FOOTER ===============*/
+header {
+  margin-bottom: var(--space-large);
+}
+
+header h1 {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-light);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: -0.5rem;
+}
+
+main {
+  width: 100%;
+  max-width: 700px;
+}
+
+footer {
+  justify-self: flex-end;
+  margin-top: auto;
+}
+
+footer p {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-light);
+}
+
+/*=============== PROJECT RELATED ===============*/
+form input {
+  width: 100%;
+  padding: var(--space-small);
+  border: 1px solid hsl(240, 15%, 23%);
+  border-radius: 5px;
+  margin-bottom: var(--space-xsmall);
+  background-color: hsl(240, 15%, 20%);
+  color: var(--white-color);
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: inherit;
+}
+
+form input:focus {
+  outline: 1px solid hsl(240, 15%, 30%);
+}
+
+.card {
+  background-color: #222530;
+  background: radial-gradient(ellipse at 40% 0%, #bf39891d 0, transparent 75%),
+    radial-gradient(ellipse at 60% 0%, #096dde1a 0, transparent 75%);
+  border: 1px solid hsl(240, 15%, 23%);
+  border-radius: 10px;
+  box-shadow: rgb(28, 33, 40) 0px 3px 6px 0px;
+  padding: var(--space-large) var(--space-small);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-bottom: var(--space-xlarge);
+}
+.card::after {
+  content: "";
+  background-color: hsla(240, 15%, 18%, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.card .firstRow figure {
+  display: flex;
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  border: 2px solid hsl(220, 17%, 23%);
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: var(--space-small);
+}
+
+.card .firstRow figure img {
+  width: 100%;
+}
+
+.card .firstRow .cardInfo h2 {
+  font-size: 1.75rem;
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-medium);
+  text-align: center;
+}
+
+.firstRow .cardInfo > p {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: var(--space-medium);
+}
+
+.cardInfo .stats {
+  color: var(--accent-color);
+  margin-bottom: var(--space-large);
+}
+
+.cardInfo .stats p {
+  margin: var(--space-xsmall);
+  margin-top: 0;
+}
+
+.cardInfo .stats p span {
+  font-weight: var(--font-bold);
+  font-size: 18px;
+}
+
+.repos h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-small);
+}
+
+.repos a {
+  font-size: 16px;
+  color: hsl(240, 13%, 15%);
+  background-color: var(--accent-color);
+  padding: 8px 10px;
+  border-radius: 5px;
+  margin: var(--space-xsmall);
+  margin-top: 0;
+}
+
+.repos .noRepoMsg {
+  text-align: center;
+  font-size: 14px;
+  margin: 0 auto var(--space-large);
+  opacity: 0.5;
+}
+
+.card.flexColumnCenter .errorMsg {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.card .errorMsg p {
+  text-align: center;
+  margin: var(--space-small);
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For large devices */
+@media (min-width: 810px) {
+  header {
+    margin: 2vh auto 3vh;
+  }
+
+  .card.flexColumnCenter {
+    padding: var(--space-large) var(--space-medium);
+  }
+
+  .card.flexColumnCenter figure {
+    width: 200px;
+    height: 200px;
+    margin-right: 2rem;
+  }
+
+  .firstRow.flexColumnCenter {
+    flex-direction: row;
+  }
+
+  .firstRow .cardInfo.flexColumnCenter {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .firstRow .cardInfo h2 {
+    text-align: left;
+  }
+
+  .firstRow .cardInfo > p {
+    font-size: 1.25rem;
+    text-align: left;
+    margin-bottom: var(--space-large);
+  }
+
+  .firstRow .cardInfo .stats.flexRowCenter {
+    margin-bottom: var(--space-large);
+    justify-content: flex-start;
+  }
+
+  .stats.flexRowCenter p:first-of-type {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  header {
+    margin: 3vh auto;
+  }
+}
