@@ -44,7 +44,7 @@ body {
   color: var(--white-color);
   width: 100vw;
   min-height: 100vh;
-  padding: 2vh var(--space-small);
+  padding: 1vh var(--space-small) 2vh;
 }
 
 a,
