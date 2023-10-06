@@ -1,0 +1,339 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --base-color: #2d3250;
+  --light-color: #424769;
+  --dark-color: #161e31;
+  --white-color: #fff;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Mulish", sans-serif;
+  --biggest-font-size: 2rem;
+  --small-font-size: 14px;
+
+  /*========== Font weight ==========*/
+  --font-bold: 700;
+  --font-medium: 500;
+  --font-light: 300;
+
+  /*========== Margins ==========*/
+  --space-xsmall: 0.5rem;
+  --space-small: 1rem;
+  --space-medium: 1.5rem;
+  --space-large: 2rem;
+  --space-xlarge: 3rem;
+
+  /*========== z index ==========*/
+  --z-normal: 1;
+  --z-tooltip: 10;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  background: var(--dark-color);
+  color: var(--white-color);
+  width: 100vw;
+  min-height: 100vh;
+  padding: var(--space-large) var(--space-small);
+}
+
+a,
+a:visited,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 700px;
+}
+
+.flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexColumnBetween {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.flexColumnStart {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.flexRowCenter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowStart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+/*=============== FOOTER ===============*/
+footer {
+  position: absolute;
+  bottom: 2vh;
+}
+
+footer p {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-light);
+}
+
+/*=============== PROJECT RELATED ===============*/
+main {
+  margin: 3vh auto;
+  background-color: var(--base-color);
+  width: 100%;
+  max-width: 400px;
+  padding: var(--space-large) var(--space-small);
+  border-radius: 15px;
+}
+
+main h2 {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: var(--space-small);
+}
+
+.resultContainer {
+  position: relative;
+  width: 100%;
+  height: 65px;
+  overflow: hidden;
+}
+
+.resultInfo {
+  position: absolute;
+  bottom: 4px;
+  color: #fff;
+  font-size: 0.8rem;
+  transition: all 150ms ease-in-out;
+  transform: translateY(200%);
+  opacity: 0;
+}
+.resultInfo.right {
+  right: 8px;
+}
+.resultInfo.left {
+  left: 8px;
+}
+
+.resultViewbox {
+  width: 100%;
+  height: 100%;
+  background-color: var(--light-color);
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  line-height: 65px;
+}
+
+.resultContainer #copyBtn {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: 38px;
+  height: 38px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 350ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.resultContainer #copyBtn:active {
+  box-shadow: 0 0 0 200px rgba(255, 255, 255, 0.08);
+}
+.resultContainer:hover #copyBtn {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.35);
+  border: none;
+}
+
+.lengthContainer {
+  position: relative;
+  width: 100%;
+  height: calc(65px - 10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--light-color);
+  border-radius: 8px;
+  margin: 30px auto;
+}
+
+.lengthContainer::before,
+.lengthContainer::after {
+  position: absolute;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.lengthContainer::before {
+  content: attr(data-min);
+  left: 10px;
+}
+.lengthContainer::after {
+  content: attr(data-max);
+  right: 10px;
+}
+
+.sectionTitle {
+  position: absolute;
+  top: -10px;
+  left: 8px;
+  transform: translateY(-50%);
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.sectionTitle#lengthTitle::after {
+  content: attr(data-length);
+  position: absolute;
+  right: -16px;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+}
+
+input#length {
+  width: calc(100% - (80px));
+  height: 2px;
+  cursor: pointer;
+  margin: auto;
+}
+
+.settingsContainer {
+  position: relative;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.settingsContainer .setting {
+  position: relative;
+  width: 100%;
+  height: calc(65px - 10px);
+  background: var(--light-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 10px 25px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.settingsContainer .setting input {
+  opacity: 0;
+  position: absolute;
+}
+.settingsContainer .setting input + label {
+  user-select: none;
+}
+.settingsContainer .setting input + label::before,
+.settingsContainer .setting input + label::after {
+  content: "";
+  position: absolute;
+  transition: 150ms cubic-bezier(0.24, 0, 0.5, 1);
+  transform: translateY(-50%);
+  top: 50%;
+  right: 10px;
+  cursor: pointer;
+}
+.settingsContainer .setting input + label::before {
+  height: 30px;
+  width: 50px;
+  border-radius: 30px;
+  background: rgba(214, 214, 214, 0.434);
+}
+.settingsContainer .setting input + label::after {
+  height: 24px;
+  width: 24px;
+  border-radius: 60px;
+  right: 32px;
+  background: #fff;
+}
+.settingsContainer .setting input:checked + label:before {
+  background: #5d68e2;
+  transition: all 150ms cubic-bezier(0, 0, 0, 0.1);
+}
+.settingsContainer .setting input:checked + label:after {
+  right: 14px;
+}
+.settingsContainer .setting input:focus + label:before {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75);
+}
+.settingsContainer .setting input:disabled + label:before,
+.settingsContainer .setting input:disabled + label:after {
+  cursor: not-allowed;
+}
+.settingsContainer .setting input:disabled + label:before {
+  background: #4f4f6a;
+}
+.settingsContainer .setting input:disabled + label:after {
+  background: #909090;
+}
+
+.generateBtn {
+  user-select: none;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 8px;
+  color: #fff;
+  border: none;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+.generateBtn:active {
+  transform: translateY(3%);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.08);
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Password Generator</title>
+  </head>
+  <body class="flexColumnCenter">
+    <main>
+      <div class="container flexColumnCenter">
+        <h2>Password Generator</h2>
+
+        <!-- Result Container -->
+        <div class="resultContainer" id="resultContainer">
+          <!-- <div class="resultText">Generated Password</div> -->
+          <div class="resultInfo right">click to copy</div>
+          <div class="resultInfo left">copied</div>
+          <div class="resultViewbox" id="resultViewbox">
+            CLICK GENERATE BUTTON
+          </div>
+          <button id="copyBtn" style="--x: 0; --y: 0">
+            <i class="fa-solid fa-copy"></i>
+          </button>
+        </div>
+
+        <!-- Length Container -->
+        <div class="lengthContainer" data-min="4" data-max="20">
+          <label
+            class="sectionTitle"
+            id="lengthTitle"
+            for="length"
+            data-length="10"
+            >Length:</label
+          >
+          <input id="length" type="range" min="4" max="20" value="10" />
+        </div>
+
+        <!-- Settings Container -->
+        <div class="settingsContainer">
+          <p class="sectionTitle">settings</p>
+          <!-- Uppercase -->
+          <div class="setting">
+            <input type="checkbox" id="uppercase" checked />
+            <label for="uppercase">Include Uppercase</label>
+          </div>
+          <!-- Lowercase -->
+          <div class="setting">
+            <input type="checkbox" id="lowercase" checked />
+            <label for="lowercase">Include Lowercase</label>
+          </div>
+          <!-- Number -->
+          <div class="setting">
+            <input type="checkbox" id="number" checked />
+            <label for="number">Include Numbers</label>
+          </div>
+          <!-- Symbol -->
+          <div class="setting">
+            <input type="checkbox" id="symbol" />
+            <label for="symbol">Include Symbols</label>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <button class="generateBtn" id="generateBtn">Generate Password</button>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container flexRowCenter">
+        <p>
+          Made with <i class="fa-solid fa-heart"></i> by
+          <a
+            href="https://www.linkedin.com/in/martafagundezrodriguez"
+            target="_blank"
+          >
+            Marta Fagúndez
+          </a>
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
