@@ -44,7 +44,7 @@ body {
   color: var(--white-color);
   width: 100vw;
   min-height: 100vh;
-  padding: var(--space-large) var(--space-small);
+  padding: 2vh var(--space-small);
 }
 
 a,
@@ -117,7 +117,7 @@ footer p {
 
 /*=============== PROJECT RELATED ===============*/
 main {
-  margin: 3vh auto;
+  margin: 1vh auto;
   background-color: var(--base-color);
   width: 100%;
   max-width: 400px;
