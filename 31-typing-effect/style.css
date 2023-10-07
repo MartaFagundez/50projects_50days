@@ -1,0 +1,105 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Mulish&family=Playfair+Display:wght@900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --dark-color: hsl(231, 28%, 12%);
+  --light-color: hsl(232, 28%, 14%);
+  --white-color: #f9f5f6;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  width: 100vw;
+  height: 100vh;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 700px;
+}
+
+.flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowCenter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/*=============== BASIC HEADER & FOOTER ===============*/
+footer {
+  position: absolute;
+  bottom: 3vh;
+}
+
+footer p {
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+/*=============== PROJECT SPECIFIC ===============*/
+main {
+  text-align: center;
+  padding: 1rem;
+}
+
+main p {
+  font-family: "Playfair Display", serif;
+  font-size: 5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 1rem;
+  background: url("./img/sunset.jpg") no-repeat top center/cover;
+  color: transparent;
+  background-clip: text;
+  margin-bottom: 8vh;
+}
+
+main .speedContainer.flexRowCenter {
+  position: absolute;
+  bottom: 12vh;
+  background-color: var(--light-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  width: auto;
+}
+
+.speedContainer label {
+  margin-right: 1rem;
+}
+
+.speedContainer input {
+  height: 2px;
+  cursor: pointer;
+}
