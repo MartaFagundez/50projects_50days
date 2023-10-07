@@ -83,6 +83,7 @@ main p {
   background: url("./img/sunset.jpg") no-repeat top center/cover;
   color: transparent;
   background-clip: text;
+  -webkit-background-clip: text;
   margin-bottom: 8vh;
 }
 
