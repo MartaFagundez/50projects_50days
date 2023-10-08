@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Good Cheap Fast</title>
+  </head>
+  <body class="flexColumnCenter">
+    <main>
+      <div class="container flexColumnCenter">
+        <h2>How do you want your project to be?</h2>
+        <p class="subtitle">
+          Your project can be any two of these <br /><span
+            >but never all three</span
+          >
+        </p>
+
+        <div class="toggles flexColumnCenter">
+          <div class="toggleContainer">
+            <input type="checkbox" id="good" class="toggle" checked />
+            <label for="good" class="label">
+              <div class="ball"></div>
+            </label>
+            <span>Good</span>
+          </div>
+
+          <div class="toggleContainer">
+            <input type="checkbox" id="cheap" class="toggle" />
+            <label for="cheap" class="label">
+              <div class="ball"></div>
+            </label>
+            <span>Cheap</span>
+          </div>
+
+          <div class="toggleContainer">
+            <input type="checkbox" id="fast" class="toggle" />
+            <label for="fast" class="label">
+              <div class="ball"></div>
+            </label>
+            <span>Fast</span>
+          </div>
+        </div>
+
+        <p class="result"><span>Cheap + Fast</span> = lower quality work</p>
+        <p class="result"><span>Good + Cheap</span> = won't happen soon</p>
+        <p class="result"><span>Fast + Good</span> = expensive</p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container flexRowCenter">
+        <p>
+          Made with <i class="fa-solid fa-heart"></i> by
+          <a
+            href="https://www.linkedin.com/in/martafagundezrodriguez"
+            target="_blank"
+          >
+            Marta Fagúndez
+          </a>
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

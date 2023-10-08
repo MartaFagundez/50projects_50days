@@ -1,0 +1,222 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nanum+Gothic+Coding:wght@400;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --base-color: #23587b;
+  --accent-color: hsl(185, 49%, 45%);
+  --dark-color: #010b13;
+  --white-color: #f8f8ff;
+  --gray--color: hsl(204, 3%, 80%);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Nanum Gothic Coding", cursive;
+  --biggest-font-size: 2rem;
+  --small-font-size: 14px;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  background: var(--base-color);
+  color: var(--white-color);
+  width: 100vw;
+  min-height: 100vh;
+  padding: 1vh 10vw;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 450px;
+}
+
+.flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexColumnBetween {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowCenter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowStart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+/*=============== BASIC HEADER & FOOTER ===============*/
+footer {
+  position: absolute;
+  bottom: 3vh;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+/*=============== PROJECT RELATED ===============*/
+main {
+  margin-top: -3vh;
+}
+
+main h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 1em;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 6vh;
+  color: white;
+  mix-blend-mode: overlay;
+}
+.subtitle span {
+  font-weight: 700;
+}
+
+.toggles {
+  margin-bottom: 9vh;
+}
+
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  width: 200px;
+}
+
+.toggle {
+  visibility: hidden;
+}
+
+.label {
+  position: relative;
+  background-color: var(--gray--color);
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 15px 0;
+  width: 80px;
+  height: 40px;
+}
+
+.toggle:checked + .label {
+  background-color: var(--accent-color);
+}
+
+.ball {
+  background: white;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  align-items: center;
+  justify-content: center;
+  animation: slideOff 0.3s linear forwards;
+}
+
+.toggle:checked + .label .ball {
+  animation: slideOn 0.3s linear forwards;
+}
+
+.toggleContainer span {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.result {
+  margin-bottom: 1rem;
+  color: white;
+  mix-blend-mode: overlay;
+}
+.result span {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+@keyframes slideOn {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1.2);
+  }
+  100% {
+    transform: translateX(40px) scale(1);
+  }
+}
+
+@keyframes slideOff {
+  0% {
+    transform: translateX(40px) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1.2);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+/*=============== MEDIA QUERIES ===============*/
+@media (min-width: 400px) {
+  main h2 {
+    font-size: 3.5rem;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 810px) {
+  .subtitle {
+    font-size: 20px;
+  }
+}
