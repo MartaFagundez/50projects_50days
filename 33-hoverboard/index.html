@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hoverboard</title>
+  </head>
+  <body class="flexColumnBetween">
+    <header>
+      <div class="container flexRowCenter">
+        <h1>Hoverboard</h1>
+      </div>
+    </header>
+
+    <main>
+      <div class="container flexColumnCenter">
+        <fieldset class="flexColumnCenter">
+          <legend>Color Palette</legend>
+          <div class="setting flexRowBetween">
+            <div class="option">
+              <input type="radio" name="palette" id="pixelParty" checked />
+              <label for="pixelParty">Pixel Party</label>
+            </div>
+
+            <div class="option">
+              <input type="radio" name="palette" id="pastelNeon" />
+              <label for="pastelNeon">Pastel Neon</label>
+            </div>
+
+            <div class="option">
+              <input type="radio" name="palette" id="natureVibe" />
+              <label for="natureVibe">Nature Vibe</label>
+            </div>
+          </div>
+        </fieldset>
+        <div class="board flexRowCenter" id="board"></div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container flexRowCenter">
+        <p>
+          Made with <i class="fa-solid fa-heart"></i> by
+          <a
+            href="https://www.linkedin.com/in/martafagundezrodriguez"
+            target="_blank"
+          >
+            Marta Fagúndez
+          </a>
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
