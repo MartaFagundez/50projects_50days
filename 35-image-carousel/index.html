@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Image Carousel</title>
+  </head>
+  <body class="flexColumnCenter">
+    <header>
+      <div class="container flexRowCenter">
+        <h1>Image Carousel</h1>
+      </div>
+    </header>
+
+    <main>
+      <div class="container flexColumnCenter">
+        <div class="carousel" id="carousel">
+          <div class="image-container" id="imgs">
+            <img src="./imgs/one.jpg" alt="first-image" />
+            <img src="./imgs/two.jpg" alt="second-image" />
+            <img src="./imgs/four.jpg" alt="fourth-image" />
+            <img src="./imgs/five.jpg" alt="fifth-image" />
+            <img src="./imgs/six.jpg" alt="sixth-image" />
+            <img src="./imgs/seven.jpg" alt="seventh-image" />
+          </div>
+
+          <div class="buttons-container">
+            <button id="left" class="btn">Prev</button>
+            <button id="right" class="btn">Next</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container flexRowCenter">
+        <p>
+          Made with <i class="fa-solid fa-heart"></i> by
+          <a
+            href="https://www.linkedin.com/in/martafagundezrodriguez"
+            target="_blank"
+          >
+            Marta Fagúndez
+          </a>
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
