@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Animated Countdown</title>
+  </head>
+  <body class="flexColumnCenter">
+    <header>
+      <div class="container flexRowCenter">
+        <h1>Animated <br />Countdown</h1>
+      </div>
+    </header>
+
+    <main>
+      <div class="container flexColumnCenter">
+        <div class="counter">
+          <div class="nums">
+            <span class="in">3</span>
+            <span>2</span>
+            <span>1</span>
+          </div>
+          <h4>Get Ready</h4>
+        </div>
+
+        <div class="final">
+          <h4>GO!</h4>
+          <button id="replay">
+            <span>Replay</span>
+          </button>
+
+          <dotlottie-player
+            src="https://lottie.host/88f0debc-0508-4953-acfb-1e20f58df720/cuAS26y4hg.json"
+            id="player"
+            class="hidden"
+            background="transparent"
+            speed="1"
+            style="width: 300px; height: 300px"
+            direction="1"
+            mode="normal"
+            loop
+            autoplay
+          ></dotlottie-player>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container flexRowCenter">
+        <p>
+          Made with <i class="fa-solid fa-heart"></i> by
+          <a
+            href="https://www.linkedin.com/in/martafagundezrodriguez"
+            target="_blank"
+          >
+            Marta Fagúndez
+          </a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <!-- ------- -->
+    <!-- Lottie player -->
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+    <!-- Custom -->
+    <script src="script.js"></script>
+  </body>
+</html>
