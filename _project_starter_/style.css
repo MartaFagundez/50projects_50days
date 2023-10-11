@@ -4,12 +4,10 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
   /*========== Colors ==========*/
-  --hue-color: 207;
-
-  --base-color: hsl(var(--hue-color), 44%, 49%);
-  --dark-color: hsl(var(--hue-color), 30%, 25%);
-  --accent-color: hsl(var(--hue-color), 100%, 49%);
-  --white-color: #f9f5f6;
+  --base-color: #e9e8df;
+  --accent-color: #34506a;
+  --black-color: hsl(240, 20%, 2%);
+  --white-color: hsl(60, 67%, 99%);
 
   /*========== Font and typography ==========*/
   --body-font: "Mulish", sans-serif;
@@ -27,10 +25,6 @@
   --space-medium: 1.5rem;
   --space-large: 2rem;
   --space-xlarge: 3rem;
-
-  /*========== z index ==========*/
-  --z-normal: 1;
-  --z-tooltip: 10;
 }
 
 /*=============== BASE ===============*/
@@ -47,10 +41,10 @@ html {
 body {
   font-family: var(--body-font);
   background: var(--base-color);
-  color: var(--white-color);
+  color: var(--accent-color);
   width: 100vw;
   min-height: 100vh;
-  padding: var(--space-large) var(--space-small);
+  padding: 6vh 5vw 3vh;
 }
 
 a,
@@ -61,7 +55,8 @@ a:active {
 }
 
 a:hover {
-  color: var(--accent-color);
+  text-decoration: underline;
+  color: inherit;
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
@@ -103,7 +98,8 @@ a:hover {
 
 /*=============== BASIC HEADER & FOOTER ===============*/
 header {
-  margin-bottom: var(--space-large);
+  position: absolute;
+  top: 6vh;
 }
 
 header h1 {
@@ -115,12 +111,12 @@ header h1 {
 }
 
 footer {
-  margin-top: var(--space-large);
+  position: absolute;
+  bottom: 3vh;
 }
 
 footer p {
   font-size: var(--small-font-size);
-  font-weight: var(--font-light);
 }
 
 /*=============== PROJECT RELATED ===============*/
