@@ -4,8 +4,6 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
   /*========== Colors ==========*/
-  --base-color: #e9e8df;
-  --accent-color: #34506a;
   --black-color: hsl(240, 20%, 2%);
   --white-color: hsl(60, 67%, 99%);
 
@@ -34,10 +32,6 @@
   margin: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: var(--body-font);
   background: var(--white-color);
@@ -45,7 +39,6 @@ body {
   width: 100vw;
   min-height: 100vh;
   padding: 6vh 5vw 3vh;
-  position: relative;
 }
 
 a,
@@ -62,7 +55,7 @@ a:hover {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
 }
 
 .flexColumnCenter {
@@ -99,8 +92,7 @@ a:hover {
 
 /*=============== BASIC HEADER & FOOTER ===============*/
 header {
-  position: absolute;
-  top: 6vh;
+  margin-bottom: 4vh;
 }
 
 header h1 {
@@ -111,36 +103,49 @@ header h1 {
   letter-spacing: 1px;
 }
 
-footer {
-  position: absolute;
-  bottom: 3vh;
-}
-
 footer p {
   font-size: var(--small-font-size);
 }
 
 /*=============== PROJECT RELATED ===============*/
 main {
-  margin: 8vh auto 7vh;
+  margin-bottom: 4vh;
 }
 
 .feed {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 2vh;
 }
 
 figure.imageContainer {
-  max-width: 300px;
-  max-height: 300px;
+  width: 350px;
+  height: 350px;
   overflow: hidden;
   margin: 0.125rem;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
 }
 
-figure.imageContainer img {
+/* Animación que será visible mientras carga la imagen */
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+figure img {
   width: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Imágenes se desvanecen antes recargar la página mediante el botón */
+body.reloading figure img {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
 }
 
 #btn {
@@ -170,9 +175,4 @@ figure.imageContainer img {
 
 #btn:active {
   transform: scale(0.98);
-}
-
-/*=============== MEDIA QUERIES ===============*/
-/* For large devices */
-@media screen and (min-width: 1281px) {
 }
