@@ -12,16 +12,22 @@
     <title>Notes App</title>
   </head>
   <body class="flexColumnCenter">
+    <!-- HEADER -->
     <header>
       <div class="container flexRowCenter">
         <h1>Notes App</h1>
       </div>
     </header>
 
+    <!-- MAIN -->
     <main>
+      <!-- Notes -->
       <div class="container flexColumnCenter" id="notes">
+        <!-- Note -->
         <div class="note">
+          <!-- Note Menu -->
           <div class="note_menu flexRowCenter">
+            <i class="fa-solid fa-thumbtack"></i>
             <i class="fa-regular fa-pen-to-square"></i>
             <i class="fa-regular fa-trash-can"></i>
           </div>
@@ -31,6 +37,7 @@
             <i class="fa-solid fa-ellipsis-vertical"></i>
           </div>
 
+          <!-- Note Body -->
           <div class="note_body flexRowCenter">
             <textarea
               name="note_text"
@@ -43,17 +50,42 @@
       </div>
     </main>
 
+    <!-- FOOTER -->
     <footer>
-      <div class="container flexRowCenter">
-        <p>
-          Made with <i class="fa-solid fa-heart"></i> by
-          <a
-            href="https://www.linkedin.com/in/martafagundezrodriguez"
-            target="_blank"
-          >
-            Marta Fagúndez
-          </a>
-        </p>
+      <!-- Footer Nav -->
+      <div class="container flexColumnCenter footer_nav">
+        <!-- Footer Nav Buttons -->
+        <div class="footer_nav_buttons flexRowCenter">
+          <div class="btn add" id="add">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+
+          <div class="btn info" id="info">
+            <i class="fa-solid fa-info"></i>
+          </div>
+        </div>
+
+        <!-- Footer Nav Colors -->
+        <div class="footer_nav_colors">
+          <div class="color gray" id="gray"></div>
+          <div class="color green" id="green"></div>
+          <div class="color blue" id="blue"></div>
+          <div class="color yellow" id="yellow"></div>
+          <div class="color red" id="red"></div>
+        </div>
+
+        <!-- Footer Nav Info -->
+        <div class="footer_nav_info">
+          <p>
+            Made with <i class="fa-solid fa-heart"></i> by
+            <a
+              href="https://www.linkedin.com/in/martafagundezrodriguez"
+              target="_blank"
+            >
+              Marta Fagúndez
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
 
