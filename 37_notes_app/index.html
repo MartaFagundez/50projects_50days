@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -18,7 +19,28 @@
     </header>
 
     <main>
-      <div class="container flexColumnCenter"></div>
+      <div class="container flexColumnCenter" id="notes">
+        <div class="note">
+          <div class="note_menu flexRowCenter">
+            <i class="fa-regular fa-pen-to-square"></i>
+            <i class="fa-regular fa-trash-can"></i>
+          </div>
+
+          <div class="note_nav flexRowBetween">
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+
+          <div class="note_body flexRowCenter">
+            <textarea
+              name="note_text"
+              id="note_text"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer>
@@ -34,6 +56,16 @@
         </p>
       </div>
     </footer>
+
+    <!-- SCRIPTS -->
+    <!-- Marked Library -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.2/marked.min.js"
+      integrity="sha512-rfX4p3RNnxdwLT3wWP1K0NR3ztTobn+sISlT9WhxDDK00zNYbQ6MCHA5OHm0hqKAzEMXYCgFrp8iY/ER5MkXqA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Custom -->
     <script src="script.js"></script>
   </body>
 </html>

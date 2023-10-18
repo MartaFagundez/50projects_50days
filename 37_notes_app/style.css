@@ -96,6 +96,13 @@ a:hover {
   width: 100%;
 }
 
+.flexRowBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 /*=============== BASIC HEADER & FOOTER ===============*/
 header {
   position: absolute;
