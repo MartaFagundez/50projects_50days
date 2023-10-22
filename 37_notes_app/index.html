@@ -8,66 +8,68 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
     <title>Notes App</title>
   </head>
-  <body class="flexColumnCenter">
+  <body class="flexColumnStart">
+    <!-- MODAL -->
+    <div id="modalContainer" class="out">
+      <div id="modalBackground">
+        <div id="modal">
+          <!-- Modal Textarea -->
+          <div class="modal_textArea_container">
+            <label for="modalTextarea">Text in Markdown format:</label>
+            <textarea
+              id="modalTextarea"
+              class="modal_textarea"
+              name="modalTextarea"
+            ></textarea>
+          </div>
+
+          <!-- Modal Preview -->
+          <div class="modal_preview_container">
+            <p>Preview:</p>
+            <div
+              class="modal_preview_text"
+              data-color="white"
+              id="modalPreviewText"
+            ></div>
+          </div>
+
+          <!-- Modal Buttons -->
+          <i class="fa-solid fa-xmark" id="closeBtn"></i>
+          <i class="fa-solid fa-circle-check" id="saveBtn"></i>
+        </div>
+      </div>
+    </div>
+
     <!-- HEADER -->
     <header>
       <div class="container flexRowCenter">
-        <h1>Notes App</h1>
+        <h1>Notes</h1>
       </div>
     </header>
 
     <!-- MAIN -->
-    <main>
+    <main class="container">
       <!-- Notes -->
-      <div class="container flexColumnCenter" id="notes">
-        <!-- Note -->
-        <div class="note">
-          <!-- Note Menu -->
-          <div class="note_menu flexRowCenter">
-            <i class="fa-solid fa-thumbtack"></i>
-            <i class="fa-regular fa-pen-to-square"></i>
-            <i class="fa-regular fa-trash-can"></i>
-          </div>
-
-          <div class="note_nav flexRowBetween">
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-solid fa-ellipsis-vertical"></i>
-          </div>
-
-          <!-- Note Body -->
-          <div class="note_body flexRowCenter">
-            <textarea
-              name="note_text"
-              id="note_text"
-              cols="30"
-              rows="10"
-            ></textarea>
-          </div>
-        </div>
+      <div class="notes grid" id="notes">
+        <!-- width of .grid-sizer used for columnWidth -->
+        <div class="grid-sizer"></div>
       </div>
     </main>
 
     <!-- FOOTER -->
     <footer>
       <!-- Footer Nav -->
-      <div class="container flexColumnCenter footer_nav">
+      <div class="flexColumnCenter footer_nav">
         <!-- Footer Nav Buttons -->
         <div class="footer_nav_buttons flexRowCenter">
-          <div class="btn add" id="add">
+          <div class="btnAdd flexRowCenter" id="btnAdd">
             <i class="fa-solid fa-plus"></i>
           </div>
-
-          <div class="btn info" id="info">
-            <i class="fa-solid fa-info"></i>
-          </div>
-        </div>
-
-        <!-- Footer Nav Colors -->
-        <div class="footer_nav_colors">
-          <div class="color gray" id="gray"></div>
+          <div class="color white" id="white"></div>
           <div class="color green" id="green"></div>
           <div class="color blue" id="blue"></div>
           <div class="color yellow" id="yellow"></div>
@@ -90,6 +92,8 @@
     </footer>
 
     <!-- SCRIPTS -->
+    <!-- Masonry -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <!-- Marked Library -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.2/marked.min.js"
