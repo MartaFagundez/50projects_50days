@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesom -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pokedex</title>
+  </head>
+  <body class="flexColumnCenter">
+    <header>
+      <div class="container flexRowCenter">
+        <figure class="logo flexRowCenter">
+          <img src="./imgs/logo_small.png" alt="Pokemon logo" />
+        </figure>
+      </div>
+    </header>
+
+    <main>
+      <div class="container cards flexRowCenter"></div>
+
+      <div class="pagination flexRowCenter">
+        <button id="btnFirst">
+          <span
+            ><img src="./imgs/first.png" alt="First page" title="First page"
+          /></span>
+        </button>
+
+        <button id="btnPrev">
+          <span
+            ><img
+              src="./imgs/prev.png"
+              alt="Previous page"
+              title="Previous page"
+          /></span>
+        </button>
+
+        <span id="paginationText"> Page 1 of 13 </span>
+
+        <button id="btnNext">
+          <span
+            ><img src="./imgs/next.png" alt="Next page" title="Next page"
+          /></span>
+        </button>
+
+        <button id="btnLast">
+          <span
+            ><img src="./imgs/last.png" alt="Last page" title="Last page"
+          /></span>
+        </button>
+
+        <!-- <button onClick={handleFirstPage} disabled={offset === 0}>
+          <span><img src={firstIcon} alt="First page" title="First page" /></span>
+        </button>
+        <button onClick={handlePreviousPage} disabled={offset === 0}>
+          <span><img src={previousIcon} alt="Previous page" title="Previous page" /></span>
+        </button>
+        <span>
+          Page {currentPage} of {totalPages}
+        </span>
+        <button onClick={handleNextPage} disabled={offset + limit >= totalPokemons}>
+          <span><img src={nextIcon} alt="Next page" title="Next page" /></span>
+        </button>
+        <button onClick={handleLastPage} disabled={offset + limit >= totalPokemons}>
+          <span><img src={lastIcon} alt="Last page" title="Last page" /></span>
+        </button> -->
+      </div>
+    </main>
+
+    <footer>
+      <div class="container flexRowCenter">
+        <p>
+          Made with <i class="fa-solid fa-heart"></i> by
+          <a
+            href="https://www.linkedin.com/in/martafagundezrodriguez"
+            target="_blank"
+          >
+            Marta Fagúndez
+          </a>
+        </p>
+      </div>
+    </footer>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
