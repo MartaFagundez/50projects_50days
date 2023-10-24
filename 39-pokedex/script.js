@@ -139,7 +139,7 @@
             <div class="imageContainer">
               <img
                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png"
-                alt=${pokemon.name}
+                alt=${pokemon.name} loading="lazy"
               />
             </div>
 

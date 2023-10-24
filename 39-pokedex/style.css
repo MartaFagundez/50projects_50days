@@ -61,7 +61,7 @@ body {
   color: var(--accent);
   width: 100vw;
   min-height: 100vh;
-  padding: 4vh 5vw;
+  padding: 4vh 2vw;
 }
 
 a,
@@ -353,12 +353,12 @@ main {
 }
 
 .pagination button {
-  font-size: 1em;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px 5px;
-  margin: 0 0.25em;
+  padding: 5px 3px;
+  margin: 0 0.125rem;
   border-radius: 5px;
   color: var(--accent);
   background: var(--yellow-color);
