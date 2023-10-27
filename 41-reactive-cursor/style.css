@@ -1,0 +1,195 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Poppins&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --base-color: #e9e8df;
+  --accent-color: #16a085;
+  --black-color: hsl(240, 20%, 2%);
+  --white-color: hsl(60, 67%, 99%);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --biggest-font-size: 2rem;
+  --small-font-size: 14px;
+
+  /*========== Font weight ==========*/
+  --font-bold: 700;
+  --font-medium: 500;
+  --font-light: 300;
+
+  /*========== Margins ==========*/
+  --space-xsmall: 0.5rem;
+  --space-small: 1rem;
+  --space-medium: 1.5rem;
+  --space-large: 2rem;
+  --space-xlarge: 3rem;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background: var(--black-color);
+  color: var(--white-color);
+  width: 100vw;
+  min-height: 100vh;
+  padding: 4vh 5vw;
+  cursor: none;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: inherit;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1200px;
+}
+
+.flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowCenter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowStart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowEnd {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/*=============== BASIC HEADER & FOOTER ===============*/
+header {
+  justify-self: flex-start;
+  margin-bottom: auto;
+}
+
+footer {
+  justify-self: flex-end;
+  margin-top: auto;
+}
+
+footer p {
+  font-size: var(--small-font-size);
+}
+
+/*=============== PROJECT RELATED ===============*/
+nav {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li + li {
+  margin-left: 1rem;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-size: 5.5rem;
+  line-height: 1em;
+  text-transform: uppercase;
+  background-color: #f4d03f;
+  background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-top: -1.5rem;
+}
+
+h2 {
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+h2 span {
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  display: block;
+  width: fit-content;
+}
+
+.msg {
+  font-size: var(--small-font-size);
+  color: var(--accent-color);
+  margin-top: 1rem;
+}
+
+.cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
+  margin-top: -20px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-color);
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.grow,
+.grow-small {
+  transform: scale(10);
+  background: #fff;
+  mix-blend-mode: difference;
+  border: none;
+}
+.grow-small {
+  transform: scale(2.5);
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For large devices */
+@media screen and (min-width: 1280px) {
+  h1 {
+    font-size: 7rem;
+  }
+
+  h2 span {
+    font-size: 4rem;
+  }
+}
