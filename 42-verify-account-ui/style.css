@@ -1,0 +1,157 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --base-color: #e9e8df;
+  --accent-color: #34506a;
+  --black-color: hsl(240, 20%, 2%);
+  --white-color: hsl(60, 67%, 99%);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Mulish", sans-serif;
+  --biggest-font-size: 2rem;
+  --small-font-size: 14px;
+
+  /*========== Font weight ==========*/
+  --font-bold: 700;
+  --font-medium: 500;
+  --font-light: 300;
+
+  /*========== Margins ==========*/
+  --space-xsmall: 0.5rem;
+  --space-small: 1rem;
+  --space-medium: 1.5rem;
+  --space-large: 2rem;
+  --space-xlarge: 3rem;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: whitesmoke;
+  color: var(--black-color);
+  width: 100vw;
+  min-height: 100vh;
+  padding: 3vh 3vw;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: inherit;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1200px;
+}
+
+.flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexColumnBetween {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowCenter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowStart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+/*=============== BASIC HEADER & FOOTER ===============*/
+footer {
+  position: absolute;
+  bottom: 3vh;
+}
+
+footer p {
+  font-size: var(--small-font-size);
+}
+
+/*=============== PROJECT RELATED ===============*/
+.mainContainer {
+  background-color: white;
+  border: 1px solid lightgray;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 2rem 1rem;
+  max-width: 700px;
+  text-align: center;
+  margin-top: -3vh;
+}
+
+.code-container {
+  margin: 3rem 0;
+}
+
+.code {
+  caret-color: transparent;
+  border-radius: 5px;
+  font-size: 5rem;
+  height: 110px;
+  width: 90px;
+  border: 1px solid #eee;
+  margin: 1%;
+  text-align: center;
+  font-weight: 300;
+  -moz-appearance: textfield;
+}
+
+.code::-webkit-outer-spin-button,
+.code::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.code:valid {
+  border-color: #3498db;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.25);
+}
+
+.info {
+  background-color: #eaeaea;
+  display: inline-block;
+  padding: 10px;
+  line-height: 20px;
+  max-width: 400px;
+  color: #777;
+  border-radius: 5px;
+}
