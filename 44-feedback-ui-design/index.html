@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Feedback UI</title>
+  </head>
+  <body class="flexColumnCenter">
+    <main class="container flexColumnCenter">
+      <div class="panel flexColumnCenter" id="panel">
+        <p class="panel_message">
+          How satisfied are you with our customer support performance?
+        </p>
+
+        <div class="optionsContainer flexRowEvenly">
+          <div class="option" id="unhappy">
+            <figure class="flexRowCenter">
+              <img src="./imgs/unhappy_icon_blue.png" alt="" />
+            </figure>
+            <p>Unhappy</p>
+          </div>
+
+          <div class="option" id="neutral">
+            <figure class="flexRowCenter">
+              <img src="./imgs/neutral_icon_blue.png" alt="" />
+            </figure>
+            <p>Neutral</p>
+          </div>
+
+          <div class="option" id="satisfied">
+            <figure class="flexRowCenter">
+              <img src="./imgs/satisfied_icon_blue.png" alt="" />
+            </figure>
+            <p>Satisfied</p>
+          </div>
+        </div>
+
+        <button id="sendButton" disabled>Send Review</button>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container flexRowCenter">
+        <p>
+          Made with <i class="fa-solid fa-heart"></i> by
+          <a
+            href="https://www.linkedin.com/in/martafagundezrodriguez"
+            target="_blank"
+          >
+            Marta Fagúndez
+          </a>
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
