@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Quiz Game</title>
+  </head>
+  <body class="flexColumnCenter">
+    <main class="flexRowCenter">
+      <div class="wrapper">
+        <div class="quiz-container">
+          <div class="quiz-head">
+            <h1 class="quiz-title">Quiz Game</h1>
+            <div class="quiz-score">
+              <span id="correct-score"></span>/<span id="total-question"></span>
+            </div>
+          </div>
+          <div class="quiz-body">
+            <h2 class="quiz-question" id="question"></h2>
+            <ul class="quiz-options"></ul>
+            <div id="result"></div>
+          </div>
+          <div class="quiz-foot">
+            <button type="button" id="check-answer">Check Answer</button>
+            <button type="button" id="play-again">Play Again!</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="flexRowCenter">
+      <div class="container flexRowCenter">
+        <p>
+          Made with <i class="fa-solid fa-heart"></i> by
+          <a
+            href="https://www.linkedin.com/in/martafagundezrodriguez"
+            target="_blank"
+          >
+            Marta Fagúndez
+          </a>
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

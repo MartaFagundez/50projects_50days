@@ -1,0 +1,224 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --light-purple-color: #8854c0;
+  --light-color: #fff;
+  --dark-color: #000;
+  --grey-color: #f2f2f2;
+  --transition: all 300ms ease-in-out;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--dark-color);
+  background: var(--grey-color);
+  width: 100vw;
+  min-height: 100vh;
+  padding: 3vh 0;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: inherit;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1000px;
+}
+
+.flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowCenter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/*=============== FOOTER ===============*/
+footer p {
+  font-size: 14px;
+}
+
+/*=============== PROJECT RELATED ===============*/
+.wrapper {
+  background: var(--light-color);
+  padding: 1.5rem 4rem 3rem;
+  width: 100%;
+  max-width: 600px;
+  height: 680px;
+  border-top-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  position: relative;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 10%), 0 1px 3px rgb(0 0 0 / 10%);
+  margin-bottom: 5vh;
+}
+
+.quiz-title {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.quiz-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--light-purple-color);
+  border: 5px solid var(--grey-color);
+  font-weight: bold;
+  width: 100px;
+  height: 50px;
+  margin: 0.5rem auto 1rem auto;
+}
+
+.quiz-question {
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+}
+
+.quiz-question .category {
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: var(--light-purple-color);
+  color: var(--light-color);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.2rem;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.quiz-options {
+  list-style-type: none;
+  margin: 1rem 0;
+}
+
+.quiz-options li {
+  border-radius: 0.5rem;
+  font-weight: 600;
+  margin: 0.7rem 0;
+  padding: 0.4rem 1.2rem;
+  cursor: pointer;
+  color: var(--light-color);
+  border: 3px solid var(--light-purple-color);
+  background-color: var(--light-purple-color);
+  box-shadow: 0 4px 0 0 #6c4298;
+  transition: var(--transition);
+}
+.quiz-options li:hover {
+  color: var(--dark-color);
+  background-color: var(--grey-color);
+  border-color: var(--grey-color);
+  box-shadow: 0 4px 0 0 #bbbbbb;
+}
+.quiz-options li:active {
+  transform: scale(0.97);
+}
+
+.quiz-options li.selected {
+  background-color: var(--grey-color);
+  color: var(--dark-color);
+  border-color: var(--grey-color);
+  box-shadow: 0 4px 0 0 #bbbbbb;
+}
+
+.quiz-foot button {
+  border: none;
+  border-radius: 0.5rem;
+  outline: 0;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  margin: 0 auto 0 auto;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: block;
+  background-color: var(--grey-color);
+  color: var(--dark-color);
+  letter-spacing: 2px;
+  transition: var(--transition);
+  box-shadow: 0 4px 0 0 #bbbbbb;
+}
+.quiz-foot button:hover {
+  background-color: #e6e6e6;
+  box-shadow: 0 4px 0 0 #a7a7a7;
+}
+.quiz-foot button:active {
+  transform: scale(0.95);
+}
+
+#play-again {
+  display: none;
+}
+
+#result {
+  padding: 0.7rem 0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+#result i {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  line-height: 30px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--light-purple-color);
+  color: var(--light-color);
+}
+
+/*=============== MEDIA QUERIES ===============*/
+@media (max-width: 678px) {
+  .quiz-title {
+    font-size: 1.6rem;
+  }
+  .wrapper {
+    width: 90%;
+    height: 90%;
+    padding: 1.5rem 1rem 3rem 1rem;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .quiz-foot button {
+    font-size: 1rem;
+  }
+}
