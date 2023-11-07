@@ -1,0 +1,138 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --base-color: #f5f5f5;
+  --accent-color: rgb(179, 131, 226);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --small-font-size: 14px;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background: var(--base-color);
+  color: var(--accent-color);
+  width: 100vw;
+  min-height: 100vh;
+  padding: 6vh 5vw 3vh;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: inherit;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1000px;
+}
+
+.flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.flexRowCenter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/*=============== FOOTER ===============*/
+footer {
+  justify-self: flex-end;
+  margin-top: auto;
+}
+
+footer p {
+  font-size: var(--small-font-size);
+}
+
+/*=============== PROJECT RELATED ===============*/
+h1 {
+  color: var(--accent-color);
+  font-size: 28vw;
+  text-align: center;
+  opacity: 0.4;
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input {
+  border: none;
+  color: #444;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  display: block;
+  width: 100%;
+}
+
+.input::placeholder {
+  color: #d5d5d5;
+}
+
+.input:focus {
+  outline-color: var(--accent-color);
+}
+
+.todos {
+  background-color: #fff;
+  list-style-type: none;
+}
+
+.todos li {
+  border-top: 1px solid #e5e5e5;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+.todos li.completed {
+  color: #b6b6b6;
+  text-decoration: line-through;
+}
+
+small {
+  color: #b5b5b5;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For large devices */
+@media screen and (min-width: 810px) {
+  h1 {
+    font-size: 10rem;
+  }
+}
